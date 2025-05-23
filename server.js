@@ -81,7 +81,12 @@ app.put("/api/users/:id", async (req, res) => {
         await Student.updateOne(
             { _id: new mongoose.Types.ObjectId(userId) },
             { $set: updatedData }
-        );"Ichki server xatosi!" });
+        );
+
+        res.json({ message: "✏️ Foydalanuvchi muvaffaqiyatli yangilandi!" });
+    } catch (error) {
+        console.error("❌ Xatolik:", error);
+        res.status(500).json({ error: "Ichki server xatosi!" });
     }
 });
 
