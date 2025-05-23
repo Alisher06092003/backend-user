@@ -78,7 +78,11 @@ app.put("/api/users/:id", async (req, res) => {
         const userId = req.params.id;
         const updatedData = req.body;
 
-       
+        await Student.updateOne(
+            { _id: new mongoose.Types.ObjectId(userId) },
+            { $set: updatedData }
+        );
+
         res.json({ message: "✏️ Foydalanuvchi muvaffaqiyatli yangilandi!" });
     } catch (error) {
         console.error("❌ Xatolik:", error);
