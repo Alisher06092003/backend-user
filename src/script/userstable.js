@@ -196,74 +196,7 @@ async function deleteUser(userId) {
 
 
 
-// Talabani tahrirlash
-async function editUser(userId) {
-    try {
-        const response = await fetch(`http://localhost:7777/api/students/${userId}`);
-        const data = await response.json();
 
-        // Formani to'ldirish
-        document.getElementById('grid-first-name').value = data.firstName;
-        document.getElementById('grid-last-name').value = data.lastName;
-        document.getElementById('phone1').value = data.phone1;
-        document.getElementById('phone2').value = data.phone2;
-
-        // Saqlash tugmasini yangilash
-        document.getElementById('saveButton').onclick = function() {
-            updateUser(userId);
-        };
-    } catch (error) {
-        console.error("Xatolik:", error);
-    }
-}
-
-// Talabani yangilash
-async function updateUser(userId) {
-    const updatedData = {
-        firstName: document.getElementById('grid-first-name').value.trim(),
-        lastName: document.getElementById('grid-last-name').value.trim(),
-        phone1: document.getElementById('phone1').value,
-        phone2: document.getElementById('phone2').value
-    };
-
-    try {
-        const response = await fetch(`http://localhost:7777/api/students/${userId}`, {
-            method: "PUT",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(updatedData)
-        });
-
-        if (response.ok) {
-            alert("Talaba muvaffaqiyatli yangilandi!");
-            location.reload(); // Yangilash
-        } else {
-            alert("Yangilashda xato yuz berdi.");
-        }
-    } catch (error) {
-        console.error("Xatolik:", error);
-    }
-}
-
-// Talabani o'chirish
-async function deleteUser(userId) {
-    if (confirm("Talabani o'chirmoqchimisiz?")) {
-        try {
-            const response = await fetch(`http://localhost:7777/api/students/${userId}`, {
-                method: "DELETE",
-            });
-
-            if (response.ok) {
-                alert("Talaba muvaffaqiyatli o'chirildi!");
-                location.reload(); // Ro'yxatni yangilash
-            } else {
-                alert("O'chirishda xato yuz berdi.");
-            }
-        } catch (error) {
-            console.error("Xatolik:", error);
-            alert("Ulanish xatosi!");
-        }
-    }
-}
 
 
 
