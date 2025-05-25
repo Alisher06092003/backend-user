@@ -186,7 +186,16 @@ async function deleteUser(userId) {
     }
 }
 
-console.log("salom");
+app.delete("/api/students/:id", async (req, res) => {
+    try {
+        const studentId = req.params.id;
+        await Student.deleteOne({ _id: new mongoose.Types.ObjectId(studentId) });
+        res.json({ message: "✅ Talaba muvaffaqiyatli o'chirildi!" });
+    } catch (error) {
+        console.error("❌ Xatolik:", error); // Xatolikni konsolga chiqarish
+        res.status(500).json({ message: "Ichki server xatosi!" });
+    }
+});
 
 
 
