@@ -7,6 +7,7 @@ document.getElementById("saveButton").addEventListener("click", async () => {
         group: document.getElementById("grid-state").value
     };
 
+    // Maydonlarni tekshirish
     if (!studentData.firstName || !studentData.lastName || studentData.group === "Gurux Tanlng") {
         showToast("❌ Barcha maydonlarni to‘ldiring!", "red");
         return;
@@ -21,6 +22,12 @@ document.getElementById("saveButton").addEventListener("click", async () => {
 
         if (response.ok) {
             showToast("✅ O‘quvchi muvaffaqiyatli qo‘shildi!", "green");
+            // Formani tozalash
+            document.getElementById("grid-first-name").value = '';
+            document.getElementById("grid-last-name").value = '';
+            document.getElementById("phone1").value = '';
+            document.getElementById("phone2").value = '';
+            document.getElementById("grid-state").value = 'Gurux Tanlng'; // O'zgarishi mumkin
         } else {
             showToast("❌ Xatolik yuz berdi!", "red");
         }
@@ -30,7 +37,7 @@ document.getElementById("saveButton").addEventListener("click", async () => {
     }
 });
 
-// ✅ **Toast xabarni chiqarish funksiyasi**
+// Toast xabarini chiqarish funksiyasi
 function showToast(message, color) {
     const toast = document.getElementById("toast");
     toast.textContent = message;
@@ -42,4 +49,3 @@ function showToast(message, color) {
         toast.classList.remove(`bg-${color}-500`);
     }, 3000); // 3 sekunddan so‘ng yashirin bo‘ladi
 }
-

@@ -140,26 +140,41 @@ document.getElementById("addAdminBtn").addEventListener("click", () => {
     textElement.textContent = "Add Admin";
 });
 
+async function editUser(userId) {
+    try {
+        const response = await fetch(`http://localhost:7777/api/students/${userId}`);
+        const data = await response.json();
 
+        // Formani to'ldirish
+        document.getElementById('grid-first-name').value = data.firstName;
+        document.getElementById('grid-last-name').value = data.lastName;
+        document.getElementById('phone1').value = data.phone1;
+        document.getElementById('phone2').value = data.phone2;
 
-function deleteUser(userId) {
-    if (!userId) {
-        console.error("Foydalanuvchi ID topilmadi");
-        return;
+        // Saqlash tugmasini yangilash
+        document.getElementById('saveButton').onclick = function() {
+            updateUser(userId);
+        };
+    } catch (error) {
+        console.error("Xatolik:", error);
     }
-    fetch(`/api/users/${userId}`, {
-        method: 'DELETE'
-    })
-    .then(res => {
-        if (!res.ok) {
-            throw new Error("Xatolik yuz berdi!");
-        }
-        return res.json();
-    })
-    .then(() => {
-        console.log(`Foydalanuvchi o'chirildi: ${userId}`);
-        // Jadvalni yangilash
-    })
-    .catch(err => console.error("❌ Xatolik:", err));
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

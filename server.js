@@ -95,24 +95,28 @@ app.listen(port, () => {
     console.log(`✅ Server ishlayapti: http://localhost:${port}`);
 });
 
-// Foydalanuvchini O'chirish va Tahrillash
-app.delete('/api/students/:id', async (req, res) => {
-    const studentId = req.params.id; // URL dan ID olish
-    if (!studentId) {
-        return res.status(400).json({ message: "O'quvchi ID topilmadi" });
-    }
-    
+
+// **Foydalanuvchini O'chirish (DELETE)**
+app.delete('/users/:id', async (req, res) => {
     try {
-        const result = await Student.deleteOne({ _id: new mongoose.Types.ObjectId(studentId) }); // O'quvchini o'chirish
+        const userId = req.params.id;
+        const result = await User.deleteOne({ _id: userId });
+
         if (result.deletedCount === 0) {
-            return res.status(404).json({ message: "O'quvchi topilmadi" });
+            return res.status(404).json({ message: "Foydalanuvchi topilmadi" });
         }
-        res.status(200).json({ message: "O'quvchi muvaffaqiyatli o'chirildi" });
+
+        res.json({ message: "Foydalanuvchi muvaffaqiyatli o‘chirildi!" });
     } catch (error) {
-        console.error("Xatolik:", error);
-        res.status(500).json({ message: "Xatolik yuz berdi" });
+        res.status(500).json({ message: "Serverda xatolik", error });
     }
 });
+
+
+
+
+
+
 
 
 
