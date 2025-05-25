@@ -186,18 +186,30 @@ async function deleteUser(userId) {
     }
 }
 
-app.delete("/api/students/:id", async (req, res) => {
+
+
+async function editUser(userId) {
     try {
-        const studentId = req.params.id;
-        await Student.deleteOne({ _id: new mongoose.Types.ObjectId(studentId) });
-        res.json({ message: "✅ Talaba muvaffaqiyatli o'chirildi!" });
+        const response = await fetch(`http://localhost:7777/api/students/${userId}`);
+        const data = await response.json();
+
+        // Formani to'ldirish
+        document.getElementById('grid-first-name').value = data.firstName;
+        document.getElementById('grid-last-name').value = data.lastName;
+        document.getElementById('phone1').value = data.phone1;
+        document.getElementById('phone2').value = data.phone2;
+
+        // Formani ko'rsatish
+        document.getElementById('editForm').style.display = 'block';
+
+        // Saqlash tugmasini yangilash
+        document.getElementById('saveButton').onclick = function() {
+            updateUser(userId);
+        };
     } catch (error) {
-        console.error("❌ Xatolik:", error); // Xatolikni konsolga chiqarish
-        res.status(500).json({ message: "Ichki server xatosi!" });
+        console.error("Xatolik:", error);
     }
-});
-
-
+}
 
 
 
