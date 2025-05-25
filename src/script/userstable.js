@@ -188,28 +188,6 @@ async function deleteUser(userId) {
 
 
 
-async function editUser(userId) {
-    try {
-        const response = await fetch(`http://localhost:7777/api/students/${userId}`);
-        const data = await response.json();
-
-        // Formani to'ldirish
-        document.getElementById('grid-first-name').value = data.firstName;
-        document.getElementById('grid-last-name').value = data.lastName;
-        document.getElementById('phone1').value = data.phone1;
-        document.getElementById('phone2').value = data.phone2;
-
-        // Formani ko'rsatish
-        document.getElementById('editForm').style.display = 'block';
-
-        // Saqlash tugmasini yangilash
-        document.getElementById('saveButton').onclick = function() {
-            updateUser(userId);
-        };
-    } catch (error) {
-        console.error("Xatolik:", error);
-    }
-}
 
 
 
