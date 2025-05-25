@@ -186,6 +186,8 @@ async function deleteUser(userId) {
     }
 }
 
+console.log("salom");
+
 
 
 
