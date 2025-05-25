@@ -161,30 +161,9 @@ async function editUser(userId) {
 }
 
 
-async function deleteUser(userId) {
-    if (!userId) {
-        alert("Foydalanuvchi ID mavjud emas!");
-        return;
-    }
 
-    const confirmDelete = confirm("Rostdan ham ushbu foydalanuvchini o‘chirishni istaysizmi?");
-    if (!confirmDelete) return;
 
-    try {
-        const response = await fetch(`http://localhost:7777/api/students/${userId}`, {
-            method: "DELETE",
-        });
 
-        if (response.ok) {
-            alert("Foydalanuvchi muvaffaqiyatli o‘chirildi!");
-            location.reload(); // Sahifani yangilash
-        } else {
-            alert("Xatolik yuz berdi.");
-        }
-    } catch (error) {
-        console.error("O‘chirishda xatolik:", error);
-    }
-}
 
 
 

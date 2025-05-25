@@ -96,21 +96,9 @@ app.listen(port, () => {
 });
 
 
-// **Foydalanuvchini O'chirish (DELETE)**
-app.delete('/users/:id', async (req, res) => {
-    try {
-        const userId = req.params.id;
-        const result = await User.deleteOne({ _id: userId });
 
-        if (result.deletedCount === 0) {
-            return res.status(404).json({ message: "Foydalanuvchi topilmadi" });
-        }
 
-        res.json({ message: "Foydalanuvchi muvaffaqiyatli o‘chirildi!" });
-    } catch (error) {
-        res.status(500).json({ message: "Serverda xatolik", error });
-    }
-});
+
 
 
 
