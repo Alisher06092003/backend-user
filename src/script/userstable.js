@@ -210,3 +210,10 @@ function showSuccess(message) {
     });
 }
 
+function showError(message) {
+    Swal.fire({
+        title: "❌ Error",
+        text: message,
+        icon: "error",
+    });
+}
