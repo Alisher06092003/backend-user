@@ -183,3 +183,22 @@ async function deleteUser(userId) {
     });
 }
 
+function showWarning(confirmCallback) {
+    Swal.fire({
+        text: "Rostdan ham ushbu foydalanuvchini o‘chirishni istaysizmi?",
+        icon: "warning",
+        iconColor: "red",
+        color: "red",
+        showCancelButton: true,
+        confirmButtonText: "OK",
+        cancelButtonText: "Cancel",
+        confirmButtonColor: "red",
+        reverseButtons: true,
+    }).then((result) => {
+        if (result.isConfirmed) {
+            confirmCallback(); // OK bosilsa, deleteUserni davom ettiramiz
+        }
+    });
+}
+
+
