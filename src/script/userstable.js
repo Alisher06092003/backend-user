@@ -161,3 +161,25 @@ async function editUser(userId) {
 }
 
 
+async function deleteUser(userId) {
+    if (!userId) {
+        showError("Foydalanuvchi ID mavjud emas!");
+        return;
+    }
+
+    showWarning(() => {
+        fetch(`http://localhost:7777/api/students/${userId}`, { method: "DELETE" })
+        .then(response => response.json()) // Javobni JSON formatida olish
+        .then(data => {
+            if (!data.message.includes("✅")) { // Javobda muvaffaqiyatli xabar borligini tekshirish
+                throw new Error("❌ Xatolik yuz berdi, foydalanuvchi o‘chirilmadi!");
+            }
+            showSuccess("Foydalanuvchi muvaffaqiyatli o‘chirildi!");
+            setTimeout(() => location.reload(), 2000); // 2 soniyadan so‘ng sahifani yangilash
+        })
+        .catch(error => {
+            showError(error.message);
+        });
+    });
+}
+
