@@ -201,4 +201,12 @@ function showWarning(confirmCallback) {
     });
 }
 
+function showSuccess(message) {
+    Swal.fire({
+        text: message,
+        icon: "success",
+        timer: 3000,
+        showConfirmButton: false,
+    });
+}
 
