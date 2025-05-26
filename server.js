@@ -9,7 +9,7 @@ const port = 7777;
 app.use(express.json());
 app.use(cors());
 
-// 🛠 **MongoDB ga ulanish — bu qismni `app.listen()` dan OLDIN qo‘shing!**
+// 🛠 **MongoDB ga ulanish!**
 mongoose.connect('mongodb://127.0.0.1:27017/schoolDB', {
     useNewUrlParser: true,
     useUnifiedTopology: true
@@ -66,24 +66,6 @@ app.get("/api/users", async (req, res) => {
         }));
 
         res.json(indexedUsers); // 🟢 Indeks bilan qaytarish
-    } catch (error) {
-        console.error("❌ Xatolik:", error);
-        res.status(500).json({ error: "Ichki server xatosi!" });
-    }
-});
-
-// **Foydalanuvchini Yangilash (PUT)**
-app.put("/api/users/:id", async (req, res) => {
-    try {
-        const userId = req.params.id;
-        const updatedData = req.body;
-
-        await Student.updateOne(
-            { _id: new mongoose.Types.ObjectId(userId) },
-            { $set: updatedData }
-        );
-
-        res.json({ message: "✏️ Foydalanuvchi muvaffaqiyatli yangilandi!" });
     } catch (error) {
         console.error("❌ Xatolik:", error);
         res.status(500).json({ error: "Ichki server xatosi!" });
