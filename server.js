@@ -90,6 +90,28 @@ app.delete("/api/students/:id", async (req, res) => {
     }
 });
 
+// **Foydalanuvchini Tahrirlash (UPDATE)**
+app.get("/api/students/:id", async (req, res) => {
+    try {
+        const studentId = req.params.id;
+
+        if (!mongoose.Types.ObjectId.isValid(studentId)) {
+            return res.status(400).json({ message: "❌ Noto‘g‘ri ID formati!" });
+        }
+
+        const student = await Student.findById(studentId);
+
+        if (!student) {
+            return res.status(404).json({ message: "❌ Foydalanuvchi topilmadi!" });
+        }
+
+        res.json(student);
+    } catch (error) {
+        console.error("❌ Xatolik:", error);
+        res.status(500).json({ message: "Ichki server xatosi!" });
+    }
+});
+
 
 
 
