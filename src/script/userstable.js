@@ -161,59 +161,29 @@ async function editUser(userId) {
 }
 
 
-async function deleteUser(userId) {
-    if (!userId) {
-        showError("Foydalanuvchi ID mavjud emas!");
+
+
+// Tanlanga foydalanuvchilar o'chrish
+
+function selectAllCheckbox(event) {
+    const checkboxes = document.querySelectorAll('.rowCheckbox');
+    checkboxes.forEach(checkbox => {
+        checkbox.checked = event.target.checked;
+    });
+
+    window.selectedUserIds = event.target.checked
+        ? Array.from(checkboxes).map(checkbox => checkbox.name)
+        : [];
+}
+
+
+function deleteSelectedUsers() {
+    const checkboxes = document.querySelectorAll('.rowCheckbox:checked');
+    const selectedUserIds = Array.from(checkboxes).map(checkbox => checkbox.name);
+
+    if (selectedUserIds.length === 0) {
+        showError("Siz Foydalanuvchini tanlamadingiz");
         return;
     }
 
-    showWarning(() => {
-        fetch(`http://localhost:7777/api/students/${userId}`, { method: "DELETE" })
-        .then(response => response.json()) // Javobni JSON formatida olish
-        .then(data => {
-            if (!data.message.includes("✅")) { // Javobda muvaffaqiyatli xabar borligini tekshirish
-                throw new Error("❌ Xatolik yuz berdi, foydalanuvchi o‘chirilmadi!");
-            }
-            showSuccess("Foydalanuvchi muvaffaqiyatli o‘chirildi!");
-            setTimeout(() => location.reload(), 2000); // 2 soniyadan so‘ng sahifani yangilash
-        })
-        .catch(error => {
-            showError(error.message);
-        });
-    });
-}
-
-function showWarning(confirmCallback) {
-    Swal.fire({
-        text: "Rostdan ham ushbu foydalanuvchini o‘chirishni istaysizmi?",
-        icon: "warning",
-        iconColor: "red",
-        color: "red",
-        showCancelButton: true,
-        confirmButtonText: "OK",
-        cancelButtonText: "Cancel",
-        confirmButtonColor: "red",
-        reverseButtons: true,
-    }).then((result) => {
-        if (result.isConfirmed) {
-            confirmCallback(); // OK bosilsa, deleteUserni davom ettiramiz
-        }
-    });
-}
-
-function showSuccess(message) {
-    Swal.fire({
-        text: message,
-        icon: "success",
-        timer: 3000,
-        showConfirmButton: false,
-    });
-}
-
-function showError(message) {
-    Swal.fire({
-        title: "❌ Error",
-        text: message,
-        icon: "error",
-    });
-}
+   
