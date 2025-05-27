@@ -391,7 +391,33 @@
 </button>
 
 
+<div id="editUserModal" class="fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center hidden">
+    <div class="bg-white rounded-lg shadow-lg p-6 w-96">
+        <h2 class="text-lg font-bold mb-4">Foydalanuvchini Tahrirlash</h2>
+        
+        <label>Ism:</label>
+        <input type="text" id="editFirstName" class="border p-2 w-full mb-2">
 
+        <label>Familiya:</label>
+        <input type="text" id="editLastName" class="border p-2 w-full mb-2">
+
+        <label>Telefon 1:</label>
+        <input type="text" id="editPhone1" class="border p-2 w-full mb-2">
+
+        <label>Telefon 2:</label>
+        <input type="text" id="editPhone2" class="border p-2 w-full mb-2">
+
+        <label>Guruh:</label>
+        <input type="text" id="editGroup" class="border p-2 w-full mb-4">
+
+        <button id="saveEditBtn" onclick="saveUserChanges()" class="bg-blue-600 text-white px-4 py-2 rounded">
+            Saqlash
+        </button>
+        <button onclick="document.getElementById('editUserModal').classList.add('hidden')" class="bg-gray-500 text-white px-4 py-2 rounded ml-2">
+            Bekor qilish
+        </button>
+    </div>
+</div>
 
 
 
