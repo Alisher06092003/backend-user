@@ -164,6 +164,32 @@ app.put("/api/students/:id", async (req, res) => {
     }
 });
 
+app.put("/api/students/:id", async (req, res) => {
+    try {
+        const studentId = req.params.id;
+        const updatedData = req.body;
+
+        if (!mongoose.Types.ObjectId.isValid(studentId)) {
+            return res.status(400).json({ message: "❌ Noto‘g‘ri ID formati!" });
+        }
+
+        const updatedStudent = await Student.findByIdAndUpdate(
+            studentId,
+            updatedData,
+            { new: true, runValidators: true }
+        );
+
+        if (!updatedStudent) {
+            return res.status(404).json({ message: "❌ Foydalanuvchi topilmadi!" });
+        }
+
+        res.json({ message: "✅ Foydalanuvchi muvaffaqiyatli yangilandi!", student: updatedStudent });
+    } catch (error) {
+        console.error("❌ Xatolik:", error);
+        res.status(500).json({ message: "Ichki server xatosi!" });
+    }
+});
+
 
 
 
