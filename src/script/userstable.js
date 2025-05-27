@@ -186,4 +186,27 @@ function deleteSelectedUsers() {
         return;
     }
 
-   
+    // ✅ Swal tasdiqlash oynasini chaqirish
+    showConfirmDialog("Tanlangan foydalanuvchilarni o‘chirishni istaysizmi?", () => {
+        selectedUserIds.forEach(async (userId) => {
+            try {
+                const response = await fetch(`http://localhost:7777/api/students/${userId}`, {
+                    method: "DELETE",
+                });
+
+                if (response.ok) {
+                    console.log(`✅ O‘chirildi: ${userId}`);
+                } else {
+                    console.error(`❌ Xatolik: ${userId} ni o‘chirishda muammo`);
+                }
+            } catch (error) {
+                console.error(`❌ Serverda xatolik: ${userId}`, error);
+            }
+        });
+
+        showSuccess("Tanlangan foydalanuvchilar muvaffaqiyatli o‘chirildi!");
+        setTimeout(() => location.reload(), 3000);
+    });
+}
+
+
