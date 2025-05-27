@@ -210,3 +210,122 @@ function deleteSelectedUsers() {
 }
 
 
+function showConfirmDialog(text, confirmCallback) {
+    Swal.fire({
+        text: text,
+        icon: "warning",
+        iconColor: "red",
+        color: "red",
+        showCancelButton: true,
+        confirmButtonText: "OK",
+        cancelButtonText: "Bekor qilish",
+        confirmButtonColor: "red",
+        reverseButtons: true,
+    }).then((result) => {
+        if (result.isConfirmed) {
+            confirmCallback(); // Agar OK bosilsa, davom ettiradi
+        }
+    });
+}
+
+function deleteUser(userId) {
+    showConfirmDialog("Ushbu foydalanuvchini o‘chirishni istaysizmi?", async () => {
+        try {
+            const response = await fetch(`http://localhost:7777/api/students/${userId}`, {
+                method: "DELETE",
+            });
+
+            if (response.ok) {
+                showSuccess("Foydalanuvchi muvaffaqiyatli o‘chirildi!");
+                setTimeout(() => location.reload(), 3000);
+            } else {
+                showError("Foydalanuvchini o‘chirishda muammo yuz berdi.");
+            }
+        } catch (error) {
+            showError("Serverda xatolik yuz berdi.");
+        }
+    });
+}
+
+
+
+function showSuccess(message) {
+    Swal.fire({
+        text: message,
+        icon: "success",
+        timer: 3000,
+        showConfirmButton: false,
+    });
+}
+
+function showError(message) {
+    Swal.fire({
+        title: "",
+        text: message,
+        icon: "error",
+    });
+}
+
+
+
+function editUser(userId) {
+    if (!userId || userId.length !== 24) {
+        showError("❌ Noto‘g‘ri foydalanuvchi ID!");
+        return;
+    }
+
+    fetch(`http://localhost:7777/api/students/${encodeURI(userId)}`)
+        .then(response => response.json())
+        .then(user => {
+            console.log("Yuklangan foydalanuvchi:", user); // 🛠 Konsolda tekshirish!
+
+            const modal = document.getElementById("editUserModal");
+            modal.classList.remove("hidden"); // ✅ Modalni ochish!
+
+            document.getElementById("editFirstName").value = user.firstName ?? "";
+            document.getElementById("editLastName").value = user.lastName ?? "";
+            document.getElementById("editPhone1").value = user.phone1 ?? "";
+            document.getElementById("editPhone2").value = user.phone2 ?? "";
+            document.getElementById("editGroup").value = user.group ?? "";
+
+            document.getElementById("saveEditBtn").setAttribute("data-user-id", userId);
+        })
+        .catch(() => showError("❌ Foydalanuvchini yuklashda muammo"));
+}
+
+
+function saveUserChanges() {
+    const userId = document.getElementById("saveEditBtn").getAttribute("data-user-id");
+
+    if (!userId || userId.length !== 24) {
+        showError("❌ Noto‘g‘ri foydalanuvchi ID!");
+        return;
+    }
+
+    const updatedUser = {
+        firstName: document.getElementById("editFirstName").value,
+        lastName: document.getElementById("editLastName").value,
+        phone1: document.getElementById("editPhone1").value,
+        phone2: document.getElementById("editPhone2").value,
+        group: document.getElementById("editGroup").value,
+    };
+
+    fetch(`http://localhost:7777/api/students/${userId}`, {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(updatedUser),
+})
+.then(response => response.json()) // ✅ Javobni tekshirish
+.then(data => {
+    console.log("Server javobi:", data); // 🛠 Konsolda tekshirish!
+    showSuccess("✅ Foydalanuvchi muvaffaqiyatli yangilandi!");
+    setTimeout(() => location.reload(), 3000);
+})
+.catch(error => {
+    console.error("Xatolik:", error);
+    showError("Tahrirlashda muammo yuz berdi!");
+});
+
+}
+
+console.log("Saqlash tugmasi ID:", document.getElementById("saveEditBtn").getAttribute("data-user-id"));
