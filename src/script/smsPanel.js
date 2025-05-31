@@ -1,37 +1,5 @@
- // JavaScript to toggle the dropdown
-        const dropdownButton = document.getElementById('dropdown-button');
-        const dropdownMenu = document.getElementById('dropdown-menu');
-        const searchInput = document.getElementById('search-input');
-        let isOpen = false; // Set to true to open the dropdown by default
-        
-        // Function to toggle the dropdown state
-        function toggleDropdown() {
-          isOpen = !isOpen;
-          dropdownMenu.classList.toggle('hidden', !isOpen);
-        }
-        
-        // Set initial state
-        toggleDropdown();
-        
-        dropdownButton.addEventListener('click', () => {
-          toggleDropdown();
-        });
-        
-        // Add event listener to filter items based on input
-        searchInput.addEventListener('input', () => {
-          const searchTerm = searchInput.value.toLowerCase();
-          const items = dropdownMenu.querySelectorAll('a');
-        
-          items.forEach((item) => {
-            const text = item.textContent.toLowerCase();
-            if (text.includes(searchTerm)) {
-              item.style.display = 'block';
-            } else {
-              item.style.display = 'none';
-            }
-          });
-        });
 
+        
 
 
 
@@ -58,4 +26,47 @@ document.querySelector(".showListBtn").addEventListener("click", function () {
 document.getElementById("closeModalBtn").addEventListener("click", function () {
     document.getElementById("userModal").classList.add("hidden");
 });
+
+
+
+
+
+
+
+
+
+
+
+// 📌 3️⃣ Frontend - Guruh nomini kiritish va backendga so‘rov yuborish
+document.addEventListener("DOMContentLoaded", function () {
+    const dropdownButton = document.getElementById("newButton");
+    const groupNameInput = document.getElementById("groupNameInput");
+
+    if (!dropdownButton || !groupNameInput) {
+        console.error("❌ newButton yoki groupNameInput topilmadi! HTML-ni tekshiring.");
+        return;
+    }
+
+    dropdownButton.addEventListener("click", async () => {
+        const groupName = groupNameInput.value.trim();
+
+        if (!groupName) {
+            alert("❌ Guruh nomini kiritishingiz kerak!");
+            return;
+        }
+
+        try {
+            const response = await fetch("http://127.0.0.1:7777/api/create-group", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ name: groupName })
+});
+
+
+          
+
+
+
+
+
 

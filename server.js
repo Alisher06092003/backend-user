@@ -6,6 +6,13 @@ import Student from "./models/student.js";
 const app = express();
 const port = 7777;
 
+// Guruh modeli
+const groupSchema = new mongoose.Schema({ 
+    name: { type: String, required: true, unique: true },
+    createdAt: { type: Date, default: Date.now }
+});
+const Group = mongoose.model("Group", groupSchema);
+
 app.use(express.json());
 app.use(cors());
 
@@ -136,6 +143,17 @@ app.put("/api/students/:id", async (req, res) => {
         res.status(500).json({ message: "Ichki server xatosi!" });
     }
 });
+
+
+
+
+
+
+
+
+
+
+
 
 
 
