@@ -178,6 +178,7 @@ app.get("/api/groups", async (req, res) => {
                 day: "2-digit",
                 month: "long",
                 year: "numeric",
+                hour: "2-digit",
                 
             }).format(new Date(group.createdAt))
         }));
