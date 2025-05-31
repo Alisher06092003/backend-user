@@ -172,7 +172,8 @@ app.get("/api/groups", async (req, res) => {
 
         // 🕒 Sanani to‘liq formatda chiqarish (Toshkent vaqti)
         const formattedGroups = groups.map(group => ({
-           
+            ...group,
+            
         }));
 
         res.json(formattedGroups);
