@@ -171,6 +171,12 @@ app.get("/api/groups", async (req, res) => {
         const groups = await Group.find().lean();
 
         
+
+        res.json(formattedGroups);
+    } catch (error) {
+        console.error("❌ Xatolik:", error);
+        res.status(500).json({ message: `❌ Server xatosi: ${error.message}` });
+    }
 });
 
 
