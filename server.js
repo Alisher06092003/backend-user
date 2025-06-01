@@ -145,6 +145,33 @@ app.put("/api/students/:id", async (req, res) => {
 });
 
 
+// 📌 2️⃣ API - Guruh yaratish
+app.post("/api/create-group", async (req, res) => {
+    try {
+        console.log("🔍 Kelayotgan ma’lumot:", req.body); // 🔎 Kiritilayotgan ma’lumotni tekshirish
+
+        const { name } = req.body;
+        if (!name.trim()) return res.status(400).json({ message: "❌ Guruh nomi kiritilmadi!" });
+
+        const newGroup = new Group({ name });
+        await newGroup.save();
+
+        console.log("✅ Guruh yaratildi:", newGroup); // 🔎 Guruh to‘g‘ri saqlanganligini tekshirish
+        res.json({ message: "✅ Guruh muvaffaqiyatli yaratildi!", group: newGroup });
+    } catch (error) {
+        console.error("❌ Xatolik:", error);
+        res.status(500).json({ message: "❌ Server xatosi!", error: error.message });
+    }
+});
+
+
+
+
+
+
+
+
+
 
 
 
