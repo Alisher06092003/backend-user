@@ -176,6 +176,7 @@ app.get("/api/groups", async (req, res) => {
                 timeZone: "Asia/Tashkent",
                 day: "2-digit",
                 month: "long",
+                year: "numeric",
                 
             }).format(new Date(group.createdAt))
         }));
