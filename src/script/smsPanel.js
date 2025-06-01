@@ -54,4 +54,12 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-     
+        try {
+            const response = await fetch("http://127.0.0.1:7777/api/create-group", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ name: groupName })
+});
+
+
+            const rawData = await response.text(); // 🔎 Serverdan kelayotgan javobni to‘g‘ridan-to‘g‘ri ko‘rish
