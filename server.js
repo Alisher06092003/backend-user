@@ -169,7 +169,13 @@ app.get("/api/groups", async (req, res) => {
     try {
         const groups = await Group.find().lean();
 
-        
+        // 🕒 Sanani to‘liq formatda chiqarish (Toshkent vaqti)
+      
+        res.json(formattedGroups);
+    } catch (error) {
+        console.error("❌ Xatolik:", error);
+        res.status(500).json({ message: `❌ Server xatosi: ${error.message}` });
+    }
 });
 
 
