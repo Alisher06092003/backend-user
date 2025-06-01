@@ -175,6 +175,7 @@ app.get("/api/groups", async (req, res) => {
             formattedDate: new Intl.DateTimeFormat("uz-UZ", {
                 timeZone: "Asia/Tashkent",
                 day: "2-digit",
+                month: "long",
                 
             }).format(new Date(group.createdAt))
         }));
