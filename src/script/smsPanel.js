@@ -63,3 +63,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
             const rawData = await response.text(); // 🔎 Serverdan kelayotgan javobni to‘g‘ridan-to‘g‘ri ko‘rish
+
+            console.log("🔍 Serverdan kelayotgan javob:", rawData);
+
+            if (!response.ok) {
+                throw new Error(rawData || "❌ Server xatosi!");
+            }
+
+            alert(rawData);
+        } catch (error) {
+            console.error("❌ Xatolik:", error);
+            alert(`❌ Guruh yaratishda muammo yuz berdi! Xatolik: ${error.message}`);
+        }
+    });
+});
