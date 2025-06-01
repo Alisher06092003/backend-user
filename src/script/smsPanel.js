@@ -36,3 +36,22 @@ document.getElementById("closeModalBtn").addEventListener("click", function () {
 
 
 
+// 📌 3️⃣ Frontend - Guruh nomini kiritish va backendga so‘rov yuborish
+document.addEventListener("DOMContentLoaded", function () {
+    const dropdownButton = document.getElementById("newButton");
+    const groupNameInput = document.getElementById("groupNameInput");
+
+    if (!dropdownButton || !groupNameInput) {
+        console.error("❌ newButton yoki groupNameInput topilmadi! HTML-ni tekshiring.");
+        return;
+    }
+
+    dropdownButton.addEventListener("click", async () => {
+        const groupName = groupNameInput.value.trim();
+
+        if (!groupName) {
+            alert("❌ Guruh nomini kiritishingiz kerak!");
+            return;
+        }
+
+     

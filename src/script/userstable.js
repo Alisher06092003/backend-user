@@ -303,4 +303,29 @@ function saveUserChanges() {
     }
 
     const updatedUser = {
-   
+        firstName: document.getElementById("editFirstName").value,
+        lastName: document.getElementById("editLastName").value,
+        phone1: document.getElementById("editPhone1").value,
+        phone2: document.getElementById("editPhone2").value,
+        group: document.getElementById("editGroup").value,
+    };
+
+    fetch(`http://localhost:7777/api/students/${userId}`, {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(updatedUser),
+})
+.then(response => response.json()) // ✅ Javobni tekshirish
+.then(data => {
+    console.log("Server javobi:", data); // 🛠 Konsolda tekshirish!
+    showSuccess("✅ Foydalanuvchi muvaffaqiyatli yangilandi!");
+    setTimeout(() => location.reload(), 3000);
+})
+.catch(error => {
+    console.error("Xatolik:", error);
+    showError("Tahrirlashda muammo yuz berdi!");
+});
+
+}
+
+console.log("Saqlash tugmasi ID:", document.getElementById("saveEditBtn").getAttribute("data-user-id"));
