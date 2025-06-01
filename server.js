@@ -173,7 +173,8 @@ app.get("/api/groups", async (req, res) => {
         const formattedGroups = groups.map(group => ({
             ...group,
             formattedDate: new Intl.DateTimeFormat("uz-UZ", {
-              
+                timeZone: "Asia/Tashkent",
+               
             }).format(new Date(group.createdAt))
         }));
 
