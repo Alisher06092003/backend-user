@@ -165,6 +165,9 @@ app.post("/api/create-group", async (req, res) => {
 });
 
 
+app.get("/api/groups", async (req, res) => {
+   
+});
 
 
 
