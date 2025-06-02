@@ -165,30 +165,6 @@ app.post("/api/create-group", async (req, res) => {
 });
 
 
-app.get("/api/groups", async (req, res) => {
-    try {
-        const groups = await Group.find().lean();
-
-        // 🕒 Sanani to‘liq formatda chiqarish (Toshkent vaqti)
-        const formattedGroups = groups.map(group => ({
-            ...group,
-            formattedDate: new Intl.DateTimeFormat("uz-UZ", {
-                timeZone: "Asia/Tashkent",
-                day: "2-digit",
-                month: "long",
-                year: "numeric",
-                hour: "2-digit",
-                minute: "2-digit",
-                second: "2-digit"
-            }).format(new Date(group.createdAt))
-        }));
-
-        res.json(formattedGroups);
-    } catch (error) {
-        console.error("❌ Xatolik:", error);
-        res.status(500).json({ message: `❌ Server xatosi: ${error.message}` });
-    }
-});
 
 
 
@@ -197,7 +173,7 @@ app.get("/api/groups", async (req, res) => {
 
 
 
-
+    
 
 
 
