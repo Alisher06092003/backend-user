@@ -64,6 +64,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
             const rawData = await response.text(); // 🔎 Serverdan kelayotgan javobni to‘g‘ridan-to‘g‘ri ko‘rish
 
-         
+            console.log("🔍 Serverdan kelayotgan javob:", rawData);
+
+          
     });
 });
