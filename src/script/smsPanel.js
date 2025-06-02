@@ -70,6 +70,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 throw new Error(rawData || "❌ Server xatosi!");
             }
 
-
+            alert(rawData);
+        } catch (error) {
+            console.error("❌ Xatolik:", error);
+            alert(`❌ Guruh yaratishda muammo yuz berdi! Xatolik: ${error.message}`);
+        }
     });
 });
