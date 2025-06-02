@@ -66,6 +66,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
             console.log("🔍 Serverdan kelayotgan javob:", rawData);
 
-          
+            if (!response.ok) {
+                throw new Error(rawData || "❌ Server xatosi!");
+            }
+
+
     });
 });
