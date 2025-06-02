@@ -29,3 +29,4 @@
 # sms_panel_fronten
 # frontendBackend
 # sabraz
+# manax
