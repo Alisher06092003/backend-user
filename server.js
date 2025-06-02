@@ -183,7 +183,11 @@ app.get("/api/groups", async (req, res) => {
             }).format(new Date(group.createdAt))
         }));
 
-     
+        res.json(formattedGroups);
+    } catch (error) {
+        console.error("❌ Xatolik:", error);
+        res.status(500).json({ message: `❌ Server xatosi: ${error.message}` });
+    }
 });
 
 
