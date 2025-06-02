@@ -171,7 +171,10 @@ app.get("/api/groups", async (req, res) => {
 
         // 🕒 Sanani to‘liq formatda chiqarish (Toshkent vaqti)
         const formattedGroups = groups.map(group => ({
-           
+            ...group,
+            formattedDate: new Intl.DateTimeFormat("uz-UZ", {
+                timeZone: "Asia/Tashkent",
+               
 });
 
 
