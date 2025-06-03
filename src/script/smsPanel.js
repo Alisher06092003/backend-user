@@ -182,7 +182,11 @@ async function loadGroups() {
             if (!document.querySelector(`#group-${group.name}`)) { // ✅ **Agar guruh jadvalda bo‘lmasa, qo‘shamiz**
                 const row = document.createElement("tr");
                 row.id = `group-${group.name}`;
-               (row); // 🛠 **Yangi guruh jadvalga qo‘shiladi**
+                row.className = "h-16 border border-gray-100 rounded";
+                row.innerHTML = `
+                   
+                `;
+                tbody.appendChild(row); // 🛠 **Yangi guruh jadvalga qo‘shiladi**
             }
         });
 
