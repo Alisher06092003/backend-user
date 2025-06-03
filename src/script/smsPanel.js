@@ -201,7 +201,12 @@ async function loadGroups() {
                             <p class="text-base font-medium leading-none text-gray-700 mr-2">${group.name}</p>
                         </div>
                     </td>
-                   
+                    <td class="pl-24">
+                        <div class="flex items-center">
+                            <p class="text-sm leading-none text-blue-600 ml-2">${group.students?.length || 0}</p>
+                        </div>
+                    </td>
+                  
                 `;
                 tbody.appendChild(row); // 🛠 **Yangi guruh jadvalga qo‘shiladi**
             }
