@@ -191,19 +191,11 @@ app.get("/api/groups", async (req, res) => {
 });
 
 
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
-
+// Backend - Guruh modeliga users qo‘shish
+const teamSchema = new mongoose.Schema({  // 🛠 **Yangi nom: teamSchema**
+    name: { type: String, required: true, unique: true },
+    students: [{ type: String }],
+    users: [{ type: String }],
+    createdAt: { type: Date, default: Date.now }
+});
 

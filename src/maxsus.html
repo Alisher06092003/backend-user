@@ -10,6 +10,29 @@
     <link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css">
 	<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js" defer></script> 
 </head>
+<style>
+      #journal-scroll::-webkit-scrollbar {
+            width: 8px;
+            cursor: pointer;
+            /*background-color: rgba(229, 231, 235, var(--bg-opacity));*/
+
+        }
+        #journal-scroll::-webkit-scrollbar-track {
+            background-color: rgba(229, 231, 235, var(--bg-opacity));
+            cursor: pointer;
+            /*background: red;*/
+            
+        }
+        #journal-scroll::-webkit-scrollbar-thumb {
+            cursor: pointer;
+            background-color: #a0aec0;
+            /*outline: 1px solid slategrey;*/
+        }
+        #journal-scroll {
+        max-height: 500px; 
+        overflow-y: auto; 
+}
+</style>
 
 
 <body class="bg-gray-100">
@@ -146,299 +169,56 @@
 
 
 
+
+
+
+
+
 <!-- Modal Oyna -->
-<div id="userModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden ">
-    <div class="bg-white p-6 rounded-lg shadow-lg w-max modal-content">
-        
+ <div class="fixed inset-0  bg-black bg-opacity-50 flex items-center justify-center  hidden" id="userModal">
 
-          <div class="flex justify-between">
-          <h2 class="text-xl font-semibold text-gray-700 mb-4 flex gap-2">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 13.5h3.86a2.25 2.25 0 0 1 2.012 1.244l.256.512a2.25 2.25 0 0 0 2.013 1.244h3.218a2.25 2.25 0 0 0 2.013-1.244l.256-.512a2.25 2.25 0 0 1 2.013-1.244h3.859m-19.5.338V18a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18v-4.162c0-.224-.034-.447-.1-.661L19.24 5.338a2.25 2.25 0 0 0-2.15-1.588H6.911a2.25 2.25 0 0 0-2.15 1.588L2.35 13.177a2.25 2.25 0 0 0-.1.661Z" />
-          </svg> Guruxdagilar</h2>
-
-
-          
-
-            <button id="closeModalBtn" class="mb-4 bg-gray-600 text-white py-2 px-5 rounded-lg flex gap-2 ">
-                
-            <p class="">Chiqish</p>
+<div class=" mt-5 w-3/12 " id="userModal ">
+	<div class="p-4 bg-white rounded-lg border shadow-md sm:p-8 dark:bg-white-800 dark:white-gray-700 ">
+    <div class="flex justify-between items-center mb-3   gap-8">
+        <h3 class="text-xl font-bold leading-none text-gray-900 dark:text-dark">Gurux a'zolari</h3>
+        <button id="closeModalBtn" class="mb-1 bg-gray-600 text-white py-1 px-1 rounded-lg flex gap-2">    
+            <p class="ml-2">Chiqish</p>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" id="closeModalBtn">
              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
             </svg>
         </button>
-
-          </div>
-
-        <!-- Jadvalni skroll konteyneriga joylashtirish -->
-        <div class="table-container max-h-[500px] overflow-y-auto">
-            <table class="border border-gray-300 w-max bg-white text-left text-sm text-gray-500 ">
-                <thead class="bg-gray-50">
-                    <tr>
-                        <th class="px-6 py-4 font-medium text-gray-900">Name</th>
-                        <th class="px-6 py-4 font-medium text-gray-900">Tel</th>
-                        <th class="px-6 py-4 font-medium text-gray-900">Delet</th>
-                    </tr>
-                </thead>
-                <tbody class="divide-y divide-gray-100 border-t border-gray-100">
-                    <tr>
-                        <td class="px-6 py-4">Alisher Qurbonov</td>
-                        <td class="px-6 py-4 text-green-600 font-semibold">+998 91 147 64 07</td>
-                        <td class="px-6 py-4">
-                            <button class="bg-red-200 text-red-600 p-3 rounded">Delet</button>
-                        </td>
-                    </tr>
-                    <!-- Yana foydalanuvchilar qo‘shilishi mumkin -->
-                </tbody>
-            </table>
-        </div>
-    </div>
-</div>
-
-
-
-
-<!-- component -->
-<html>
-    <head>
-        <link rel="stylesheet" href="https://horizon-tailwind-react-corporate-7s21b54hb-horizon-ui.vercel.app/static/css/main.d7f96858.css" />
-    </head>
-    <body >
-        <div class="flex flex-col justify-center items-center h-[100vh]">
-            <div
-                class="relative flex max-w-[500px] h-[430px] w-full flex-col rounded-[10px] border-[1px] border-gray-200 bg-white bg-clip-border shadow-md shadow-[#F3F3F3] dark:border-[#ffffff33] dark:!bg-navy-800 dark:text-white dark:shadow-none"
-            >
-                <div
-                class="flex h-fit w-full items-center justify-between rounded-t-2xl bg-white px-4 pb-[20px] pt-4 shadow-2xl shadow-gray-100 dark:!bg-navy-700 dark:shadow-none"
-                >
-                <h4 class="text-lg font-bold text-navy-700 dark:text-white">
-                    Top Creators
-                </h4>
-                <button
-                    class="linear rounded-[20px] bg-lightPrimary px-4 py-2 text-base font-medium text-brand-500 transition duration-200 hover:bg-gray-100 active:bg-gray-200 dark:bg-white/5 dark:text-white dark:hover:bg-white/10 dark:active:bg-white/20"
-                >
-                    See all
-                </button>
-                </div>
-                <div class="w-full overflow-x-scroll px-4 md:overflow-x-hidden">
-                <table role="table" class="w-full min-w-[500px] overflow-x-scroll">
-                    <thead>
-                    <tr role="row">
-                        <th
-                        colspan="1"
-                        role="columnheader"
-                        title="Toggle SortBy"
-                        style="cursor: pointer"
-                        >
-                        <div
-                            class="flex items-center justify-between pb-2 pt-4 text-start uppercase tracking-wide text-gray-600 sm:text-xs lg:text-xs"
-                        >
-                            Name
-                        </div>
-                        </th>
-                        <th
-                        colspan="1"
-                        role="columnheader"
-                        title="Toggle SortBy"
-                        style="cursor: pointer"
-                        >
-                        <div
-                            class="flex items-center justify-between pb-2 pt-4 text-start uppercase tracking-wide text-gray-600 sm:text-xs lg:text-xs"
-                        >
-                            Artworks
-                        </div>
-                        </th>
-                        <th
-                        colspan="1"
-                        role="columnheader"
-                        title="Toggle SortBy"
-                        style="cursor: pointer"
-                        >
-                        <div
-                            class="flex items-center justify-between pb-2 pt-4 text-start uppercase tracking-wide text-gray-600 sm:text-xs lg:text-xs"
-                        >
-                            Rating
-                        </div>
-                        </th>
-                    </tr>
-                    </thead>
-                    <tbody role="rowgroup" class="px-4">
-                    <tr role="row">
-                        <td class="py-3 text-sm" role="cell">
-                        <div class="flex items-center gap-2">
-                            <div class="h-[30px] w-[30px] rounded-full">
-                            <img
-                                src="https://images.unsplash.com/photo-1506863530036-1efeddceb993?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2244&amp;q=80"
-                                class="h-full w-full rounded-full"
-                                alt=""
-                            />
-                            </div>
-                            <p
-                            class="text-sm font-medium text-navy-700 dark:text-white"
-                            >
-                            @maddison_c21
-                            </p>
-                        </div>
-                        </td>
-                        <td class="py-3 text-sm" role="cell">
-                        <p class="text-md font-medium text-gray-600 dark:text-white">
-                            9821
-                        </p>
-                        </td>
-                        <td class="py-3 text-sm" role="cell">
-                        <div class="mx-2 flex font-bold">
-                            <div
-                            class="h-2 w-16 rounded-full bg-gray-200 dark:bg-navy-700"
-                            >
-                            <div
-                                class="flex h-full items-center justify-center rounded-md bg-brand-500 dark:bg-brand-400"
-                                style="width: 30%"
-                            ></div>
-                            </div>
-                        </div>
-                        </td>
-                    </tr>
-                    <tr role="row">
-                        <td class="py-3 text-sm" role="cell">
-                        <div class="flex items-center gap-2">
-                            <div class="h-[30px] w-[30px] rounded-full">
-                            <img
-                                src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1780&amp;q=80"
-                                class="h-full w-full rounded-full"
-                                alt=""
-                            />
-                            </div>
-                            <p
-                            class="text-sm font-medium text-navy-700 dark:text-white"
-                            >
-                            @karl.will02
-                            </p>
-                        </div>
-                        </td>
-                        <td class="py-3 text-sm" role="cell">
-                        <p class="text-md font-medium text-gray-600 dark:text-white">
-                            7032
-                        </p>
-                        </td>
-                        <td class="py-3 text-sm" role="cell">
-                        <div class="mx-2 flex font-bold">
-                            <div
-                            class="h-2 w-16 rounded-full bg-gray-200 dark:bg-navy-700"
-                            >
-                            <div
-                                class="flex h-full items-center justify-center rounded-md bg-brand-500 dark:bg-brand-400"
-                                style="width: 30%"
-                            ></div>
-                            </div>
-                        </div>
-                        </td>
-                    </tr>
-                    <tr role="row">
-                        <td class="py-3 text-sm" role="cell">
-                        <div class="flex items-center gap-2">
-                            <div class="h-[30px] w-[30px] rounded-full">
-                            <img
-                                src="https://images.unsplash.com/photo-1573766064535-6d5d4e62bf9d?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1315&amp;q=80"
-                                class="h-full w-full rounded-full"
-                                alt=""
-                            />
-                            </div>
-                            <p
-                            class="text-sm font-medium text-navy-700 dark:text-white"
-                            >
-                            @andreea.1z
-                            </p>
-                        </div>
-                        </td>
-                        <td class="py-3 text-sm" role="cell">
-                        <p class="text-md font-medium text-gray-600 dark:text-white">
-                            5204
-                        </p>
-                        </td>
-                        <td class="py-3 text-sm" role="cell">
-                        <div class="mx-2 flex font-bold">
-                            <div
-                            class="h-2 w-16 rounded-full bg-gray-200 dark:bg-navy-700"
-                            >
-                            <div
-                                class="flex h-full items-center justify-center rounded-md bg-brand-500 dark:bg-brand-400"
-                                style="width: 30%"
-                            ></div>
-                            </div>
-                        </div>
-                        </td>
-                    </tr>
-                    <tr role="row">
-                        <td class="py-3 text-sm" role="cell">
-                        <div class="flex items-center gap-2">
-                            <p
-                            class="text-sm font-medium text-navy-700 dark:text-white"
-                            >
+   </div>
+   <div class="flow-root "  id="journal-scroll">
+        <ul role="list" class="divide-y divide-gray-100 dark:divide-gray-200 w-11/12 ml-4" >
+            <li class="py-3 sm:py-4">
+                <div class="flex items-center space-x-4">
+                    <div class="flex-shrink-0">
+                        <img class="w-10 h-10 rounded-full" src="/img/1783012.png" alt="Neil image">
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <p class="text-sm font-medium text-gray-900 truncate dark:text-dark">
                             Alisher Qurbonov
-                            </p>
-                        </div>
-                        </td>
-                        <td class="py-3 text-sm" role="cell">
-                        <p class="text-md font-medium text-gray-600 dark:text-white">
-                            +99891 147 64 07
                         </p>
-                        </td>
-                        <td class="py-3 text-sm" role="cell">
-                        <div class="mx-2 flex font-bold">
-                            <div
-                            class="h-2 w-16 rounded-full bg-gray-200 dark:bg-navy-700"
-                            >
-                            <div
-                                class="flex h-full items-center justify-center rounded-md bg-brand-500 dark:bg-brand-400"
-                                style="width: 30%"
-                            ></div>
-                            </div>
-                        </div>
-                        </td>
-                    </tr>
-                    <tr role="row">
-                        <td class="py-3 text-sm" role="cell">
-                        <div class="flex items-center gap-2">
-                            <div class="h-[30px] w-[30px] rounded-full">
-                            <img
-                                src="https://i.ibb.co/7p0d1Cd/Frame-24.png"
-                                class="h-full w-full rounded-full"
-                                alt=""
-                            />
-                            </div>
-                            <p
-                            class="text-sm font-medium text-navy-700 dark:text-white"
-                            >
-                            @simmmple.web
-                            </p>
-                        </div>
-                        </td>
-                        <td class="py-3 text-sm" role="cell">
-                        <p class="text-md font-medium text-gray-600 dark:text-white">
-                            3871
+                        <p class="text-sm text-gray-500 truncate dark:text-gray-400">
+                            +998 91 147 64 07
                         </p>
-                        </td>
-                        <td class="py-3 text-sm" role="cell">
-                        <div class="mx-2 flex font-bold">
-                            <div
-                            class="h-2 w-16 rounded-full bg-gray-200 dark:bg-navy-700"
-                            >
-                            <div
-                                class="flex h-full items-center justify-center rounded-md bg-brand-500 dark:bg-brand-400"
-                                style="width: 30%"
-                            ></div>
-                            </div>
-                        </div>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
+                    </div>
+                    <div class="inline-flex items-center text-base font-semibold text-red-500 dark:text-red">
+                       <button class="bg-red-200 text-red-600 p-1 rounded"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                         <path stroke-linecap="round" stroke-linejoin="round" d="M22 10.5h-6m-2.25-4.125a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0ZM4 19.235v-.11a6.375 6.375 0 0 1 12.75 0v.109A12.318 12.318 0 0 1 10.374 21c-2.331 0-4.512-.645-6.374-1.766Z" />
+                            </svg>
+                        </button>
+                    </div>
                 </div>
-            </div>
-
-        </div>
-    </body>
-</html>
+            </li>
+           
+        </ul>
+   </div>
+</div>
+	
+</div>
+ </div>
+<br><br>
 
 
 
