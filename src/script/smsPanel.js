@@ -209,7 +209,11 @@ async function loadGroups() {
                     <td class="pl-5">
                         <p class="text-sm leading-none text-gray-600 ml-2">${group.formattedDate}</p>
                     </td>
-                  
+                    <td class="pl-5">
+                        <button class="focus:ring-2 focus:ring-offset-2 focus:ring-blue-600 text-sm leading-none text-white py-3 px-5 bg-blue-500 rounded hover:bg-blue-600 focus:outline-none showListBtn">
+                            Ro‘yxatni ko‘rish
+                        </button>
+                    </td>
                 `;
                 tbody.appendChild(row); // 🛠 **Yangi guruh jadvalga qo‘shiladi**
             }
