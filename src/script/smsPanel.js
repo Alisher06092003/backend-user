@@ -181,8 +181,8 @@ async function loadGroups() {
         groups.forEach(group => {
             if (!document.querySelector(`#group-${group.name}`)) { // ✅ **Agar guruh jadvalda bo‘lmasa, qo‘shamiz**
                 const row = document.createElement("tr");
-               
-                tbody.appendChild(row); // 🛠 **Yangi guruh jadvalga qo‘shiladi**
+                row.id = `group-${group.name}`;
+               (row); // 🛠 **Yangi guruh jadvalga qo‘shiladi**
             }
         });
 
