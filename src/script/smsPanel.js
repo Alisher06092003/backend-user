@@ -206,6 +206,9 @@ async function loadGroups() {
                             <p class="text-sm leading-none text-blue-600 ml-2">${group.students?.length || 0}</p>
                         </div>
                     </td>
+                    <td class="pl-5">
+                        <p class="text-sm leading-none text-gray-600 ml-2">${group.formattedDate}</p>
+                    </td>
                   
                 `;
                 tbody.appendChild(row); // 🛠 **Yangi guruh jadvalga qo‘shiladi**
