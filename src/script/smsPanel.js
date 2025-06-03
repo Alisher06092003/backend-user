@@ -178,7 +178,10 @@ async function loadGroups() {
             return;
         }
 
-        
+        groups.forEach(group => {
+            if (!document.querySelector(`#group-${group.name}`)) { // ✅ **Agar guruh jadvalda bo‘lmasa, qo‘shamiz**
+               
+        });
 
     } catch (error) {
         console.error("❌ Xatolik:", error);
