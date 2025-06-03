@@ -196,7 +196,12 @@ async function loadGroups() {
                             </div>
                         </div>
                     </td>
-                  
+                    <td class="focus:text-indigo-600">
+                        <div class="flex items-center pl-5">
+                            <p class="text-base font-medium leading-none text-gray-700 mr-2">${group.name}</p>
+                        </div>
+                    </td>
+                   
                 `;
                 tbody.appendChild(row); // 🛠 **Yangi guruh jadvalga qo‘shiladi**
             }
