@@ -184,7 +184,19 @@ async function loadGroups() {
                 row.id = `group-${group.name}`;
                 row.className = "h-16 border border-gray-100 rounded";
                 row.innerHTML = `
-                   
+                    <td>
+                        <div class="ml-5">
+                            <div class="bg-gray-200 rounded-sm w-5 h-5 flex justify-center items-center relative">
+                                <input type="checkbox" class="checkbox opacity-0 absolute cursor-pointer w-full h-full" />
+                                <div class="check-icon hidden bg-indigo-700 text-white rounded-sm">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path d="M5 12l5 5l10 -10"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                  
                 `;
                 tbody.appendChild(row); // 🛠 **Yangi guruh jadvalga qo‘shiladi**
             }
