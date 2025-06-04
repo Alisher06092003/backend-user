@@ -229,7 +229,9 @@ async function loadGroups() {
         }
 
         groups.forEach(group => {
-            
+            const row = document.createElement("tr");
+           
+            tbody.appendChild(row);
         });
 
     } catch (error) {
