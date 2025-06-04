@@ -6,17 +6,26 @@ import Student from "./models/student.js";
 const app = express();
 const port = 7777;
 
-// Guruh modeli
+// Guruh sxemasi
 const groupSchema = new mongoose.Schema({ 
-    name: { type: String, required: true, unique: true },
-    createdAt: { type: Date, default: Date.now }
+    name: { 
+        type: String, 
+        required: true,  
+        unique: true    
+    },
+    createdAt: { 
+        type: Date, 
+        default: Date.now 
+    }
 });
+
+// Guruh modelini yaratish
 const Group = mongoose.model("Group", groupSchema);
 
 app.use(express.json());
 app.use(cors());
 
-// 🛠 **MongoDB ga ulanish!**
+// MongoDB ga ulanish!
 mongoose.connect('mongodb://127.0.0.1:27017/schoolDB', {
     useNewUrlParser: true,
     useUnifiedTopology: true
@@ -28,7 +37,7 @@ mongoose.connect('mongodb://127.0.0.1:27017/schoolDB', {
     console.error("❌ MongoDB ulanishida xatolik:", error);
 });
 
-// **API - O‘quvchini qo‘shish (POST)**
+// API - O‘quvchini qo‘shish (POST)
 app.post('/api/students', async (req, res) => {
     try {
         const lastUser = await Student.find().sort({ userId: -1 }).limit(1);
@@ -51,7 +60,7 @@ app.post('/api/students', async (req, res) => {
     }
 });
 
-// **API - O‘quvchi ro‘yxatini olish (GET)**
+// API - O‘quvchi ro‘yxatini olish (GET)
 app.get('/api/students', async (req, res) => {
     try {
         const students = await Student.find();
@@ -79,12 +88,12 @@ app.get("/api/users", async (req, res) => {
     }
 });
 
-// **Serverni ishga tushirish**
+// Serverni ishga tushirish
 app.listen(port, () => {
     console.log(`✅ Server ishlayapti: http://localhost:${port}`);
 });
 
-// **Foydalanuvchini O'chirish (DELETE)**
+// Foydalanuvchini O'chirish (DELETE)
 app.delete("/api/students/:id", async (req, res) => {
     try {
         const studentId = req.params.id;
@@ -96,7 +105,7 @@ app.delete("/api/students/:id", async (req, res) => {
     }
 });
 
-// **Foydalanuvchini Tahrirlash (UPDATE)**
+// Foydalanuvchini Tahrirlash (UPDATE)
 app.get("/api/students/:id", async (req, res) => {
     try {
         const studentId = req.params.id;
@@ -118,6 +127,7 @@ app.get("/api/students/:id", async (req, res) => {
     }
 });
 
+// Berilgan IDga ega Foydalanuvchini yangilaydi.
 app.put("/api/students/:id", async (req, res) => {
     try {
         const studentId = req.params.id;
@@ -144,19 +154,19 @@ app.put("/api/students/:id", async (req, res) => {
     }
 });
 
-
-// 📌 2️⃣ API - Guruh yaratish
+// API - Guruh yaratish
 app.post("/api/create-group", async (req, res) => {
     try {
-        console.log("🔍 Kelayotgan ma’lumot:", req.body); // 🔎 Kiritilayotgan ma’lumotni tekshirish
+        console.log("🔍 Kelayotgan ma’lumot:", req.body); // Kiritilayotgan ma’lumotni tekshirish
 
         const { name } = req.body;
-        if (!name.trim()) return res.status(400).json({ message: "❌ Guruh nomi kiritilmadi!" });
+        const validationError = validateGroupName(name);
+        if (validationError) return res.status(400).json({ message: validationError });
 
         const newGroup = new Group({ name });
         await newGroup.save();
 
-        console.log("✅ Guruh yaratildi:", newGroup); // 🔎 Guruh to‘g‘ri saqlanganligini tekshirish
+        console.log("✅ Guruh yaratildi:", newGroup); // Guruh to‘g‘ri saqlanganligini tekshirish
         res.json({ message: "✅ Guruh muvaffaqiyatli yaratildi!", group: newGroup });
     } catch (error) {
         console.error("❌ Xatolik:", error);
@@ -164,38 +174,11 @@ app.post("/api/create-group", async (req, res) => {
     }
 });
 
-
-app.get("/api/groups", async (req, res) => {
-    try {
-        const groups = await Group.find().lean();
-
-        // 🕒 Sanani to‘liq formatda chiqarish (Toshkent vaqti)
-        const formattedGroups = groups.map(group => ({
-            ...group,
-            formattedDate: new Intl.DateTimeFormat("uz-UZ", {
-                timeZone: "Asia/Tashkent",
-                day: "2-digit",
-                month: "long",
-                year: "numeric",
-                hour: "2-digit",
-                minute: "2-digit",
-                second: "2-digit"
-            }).format(new Date(group.createdAt))
-        }));
-
-        res.json(formattedGroups);
-    } catch (error) {
-        console.error("❌ Xatolik:", error);
-        res.status(500).json({ message: `❌ Server xatosi: ${error.message}` });
+// Guruh nomini tekshirish funksiyasi
+function validateGroupName(name) {
+    if (!name || !name.trim()) {
+        return "❌ Guruh nomi kiritilmadi!";
     }
-});
-
-
-// Backend - Guruh modeliga users qo‘shish
-const teamSchema = new mongoose.Schema({  // 🛠 **Yangi nom: teamSchema**
-    name: { type: String, required: true, unique: true },
-    students: [{ type: String }],
-    users: [{ type: String }],
-    createdAt: { type: Date, default: Date.now }
-});
+    return null; // Hech qanday xato bo'lmasa null qaytaramiz
+}
 
