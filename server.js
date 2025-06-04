@@ -234,7 +234,9 @@ async function loadGroups() {
                 <td>${group.name}</td>
                 <td>${group.formattedDate}</td>
                 <td>${group.time}</td>
-               
+                <td>
+                    <button class="showListBtn">Ro‘yxatni ko‘rish</button>
+                </td>
             `;
             tbody.appendChild(row);
         });
