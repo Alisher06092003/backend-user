@@ -228,7 +228,9 @@ async function loadGroups() {
             return;
         }
 
-       
+        groups.forEach(group => {
+            
+        });
 
     } catch (error) {
         console.error("❌ Xatolik:", error);
