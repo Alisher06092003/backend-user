@@ -232,7 +232,8 @@ async function loadGroups() {
             const row = document.createElement("tr");
             row.innerHTML = `
                 <td>${group.name}</td>
-               
+                <td>${group.formattedDate}</td>
+                
             `;
             tbody.appendChild(row);
         });
