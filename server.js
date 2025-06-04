@@ -210,3 +210,10 @@ app.get("/api/groups", async (req, res) => {
     }
 });
 
+// Serverdan guruhlar ro'yxatini yuklab, uni jadvalda ko'rsatish.
+async function loadGroups() {
+   
+}
+
+
+
