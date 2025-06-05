@@ -197,7 +197,11 @@ async function loadGroups() {
                          </section>
                      </div>
                 <td class="px-5 pl-5">
-                =
+                
+                                              <div class="flex gap-3  w-16">
+                                                
+                                                
+                                     </td>
             `;
             tbody.appendChild(row); // Har bir guruh jadvalga qo'shiladi
         });
