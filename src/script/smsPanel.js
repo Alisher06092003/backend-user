@@ -200,7 +200,9 @@ async function loadGroups() {
                 
                                               <div class="flex gap-3  w-16">
                                                 
-                                                
+                                                <a  href="#" class="bg-red-200 p-2 rounded">
+                                               
+                                           </div>
                                      </td>
             `;
             tbody.appendChild(row); // Har bir guruh jadvalga qo'shiladi
