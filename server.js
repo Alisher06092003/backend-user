@@ -213,8 +213,22 @@ app.get("/api/groups", async (req, res) => {
 // Serverdan guruhlar ro'yxatini yuklab, uni jadvalda ko'rsatish.
 async function loadGroups() {
     try {
-       
+        const response = await fetch("http://127.0.0.1:7777/api/groups");
 
+        if (!response.ok) {
+            throw new Error("❌ Guruhlarni olishda xatolik yuz berdi!");
+        }
+
+        const groups = await response.json();
+        const tbody = document.querySelector("tbody");
+        tbody.innerHTML = ""; // Ro'yxatni tozalash
+
+        if (!groups.length) {
+            tbody.innerHTML = "<tr><td colspan='7' class='text-center'>❌ Hech qanday guruh topilmadi!</td></tr>";
+            return;
+        }
+
+      
     } catch (error) {
         console.error("❌ Xatolik:", error);
         document.querySelector("tbody").innerHTML = "<tr><td colspan='7'>❌ Guruhlar yuklanmadi!</td></tr>";
