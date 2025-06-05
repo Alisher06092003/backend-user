@@ -202,7 +202,8 @@ async function loadGroups() {
                                                 
                                                 <a  href="#" class="bg-red-200 p-2 rounded">
                                                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-red-500">
-                                                   
+                                                    <path    />
+                                                  </svg>
                                                 </a>
                                            </div>
                                      </td>
