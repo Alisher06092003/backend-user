@@ -228,7 +228,19 @@ async function loadGroups() {
             return;
         }
 
-      
+        groups.forEach(group => {
+            const row = document.createElement("tr");
+            row.innerHTML = `
+                <td>${group.name}</td>
+                <td>${group.formattedDate}</td>
+                <td>${group.time}</td>
+                <td>
+                    <button class="showListBtn">Ro‘yxatni ko‘rish</button>
+                </td>
+            `;
+            tbody.appendChild(row);
+        });
+
     } catch (error) {
         console.error("❌ Xatolik:", error);
         document.querySelector("tbody").innerHTML = "<tr><td colspan='7'>❌ Guruhlar yuklanmadi!</td></tr>";
