@@ -213,33 +213,7 @@ app.get("/api/groups", async (req, res) => {
 // Serverdan guruhlar ro'yxatini yuklab, uni jadvalda ko'rsatish.
 async function loadGroups() {
     try {
-        const response = await fetch("http://127.0.0.1:7777/api/groups");
-
-        if (!response.ok) {
-            throw new Error("❌ Guruhlarni olishda xatolik yuz berdi!");
-        }
-
-        const groups = await response.json();
-        const tbody = document.querySelector("tbody");
-        tbody.innerHTML = ""; // Ro'yxatni tozalash
-
-        if (!groups.length) {
-            tbody.innerHTML = "<tr><td colspan='7' class='text-center'>❌ Hech qanday guruh topilmadi!</td></tr>";
-            return;
-        }
-
-        groups.forEach(group => {
-            const row = document.createElement("tr");
-            row.innerHTML = `
-                <td>${group.name}</td>
-                <td>${group.formattedDate}</td>
-                <td>${group.time}</td>
-                <td>
-                    <button class="showListBtn">Ro‘yxatni ko‘rish</button>
-                </td>
-            `;
-            tbody.appendChild(row);
-        });
+       
 
     } catch (error) {
         console.error("❌ Xatolik:", error);
