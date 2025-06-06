@@ -228,7 +228,20 @@
 		<!-- / Bottom Navigation https://placehold.co/300x300/e2e8f0/cccccc -->	
 	</div>
 
+	<script>
+		function app() {
+			return {
+				step: 1, 
+				
+				checkPasswordStrength() {
+					var strongRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})");
+					var mediumRegex = new RegExp("^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{6,})");
+				}
+			}
+		}
 
+
+	</script>
 	<script src="script/smsPanel.js"></script>
   <script src="./script/userstable.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
