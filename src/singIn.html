@@ -240,7 +240,16 @@
 			}
 		}
 
+async function loadStudents() {
+    const response = await fetch('http://localhost:7777/api/students');
+    const students = await response.json();
 
+    const userList = document.querySelector('.user-list'); 
+    userList.innerHTML = ""; 
+
+    
+
+loadStudents();
 	</script>
 	<script src="script/smsPanel.js"></script>
   <script src="./script/userstable.js"></script>
