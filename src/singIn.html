@@ -284,7 +284,12 @@ async function loadStudents() {
             this.classList.toggle('active');
 
             if (this.classList.contains('active')) {
-                
+                defaultText.classList.add('hidden');
+                successText.classList.remove('hidden');
+            } else {
+                defaultText.classList.remove('hidden');
+                successText.classList.add('hidden');
+            }
         });
     });
 }
