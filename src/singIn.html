@@ -254,7 +254,12 @@ async function loadStudents() {
                     <div class="avatar-content mr-3">
                         <img class="avatar w-12 h-12 rounded-full" src="/img/1783012.png"/>
                     </div>
-                   
+                    <div class="user-body flex flex-col mb-4 sm:mb-0 sm:mr-4">
+                        <a href="#" class="title font-medium no-underline">${student.firstName} ${student.lastName}</a>
+                        <span class="subtitle text-slate-500">${student.phone1}</span>
+                    </div>
+                </div>
+               
 
 loadStudents();
 	</script>
