@@ -247,7 +247,14 @@ async function loadStudents() {
     const userList = document.querySelector('.user-list'); 
     userList.innerHTML = ""; 
 
-    
+    students.forEach(student => {
+        const userRow = `
+            <div class="user-row flex items-center justify-between p-4 duration-300 hover:bg-[#f6f8f9] border-b border-gray-200">
+                <div class="user flex items-center">
+                    <div class="avatar-content mr-3">
+                        <img class="avatar w-12 h-12 rounded-full" src="/img/1783012.png"/>
+                    </div>
+                   
 
 loadStudents();
 	</script>
