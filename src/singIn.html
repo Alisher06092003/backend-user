@@ -216,7 +216,11 @@
 							class="w-32 focus:outline-none border border-transparent py-2 px-5 rounded-lg shadow-sm text-center text-white bg-blue-500 hover:bg-blue-600 font-medium" 
 						>Keyingisi</button>
 
-						
+						<button
+							@click="step = 'complete'"
+							x-show="step === 3"
+							class="w-32 focus:outline-none border border-transparent py-2 px-5 rounded-lg shadow-sm text-center text-white bg-blue-500 hover:bg-blue-600 font-medium"id="newButton" 
+						>Bajarildi</button>
 					</div>
 				</div>
 			</div>
