@@ -296,9 +296,15 @@ document.addEventListener("alpine:init", () => {
             }
         },
 
+        toggleUser(userId) {
+            if (this.selectedUsers.includes(userId)) {
+                this.selectedUsers = this.selectedUsers.filter(id => id !== userId);
+            } else {
+                this.selectedUsers.push(userId);
+            }
+        },
+
        
-        }
-    }));
 });
 
 
