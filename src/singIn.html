@@ -331,7 +331,13 @@ document.addEventListener("alpine:init", () => {
             }
         },
 
-       
+        previousStep() {
+            if (this.step > 1) {
+                this.step--;
+            }
+        },
+
+        
 });
 
 
