@@ -41,6 +41,18 @@ document.addEventListener("DOMContentLoaded", function () {
     const dropdownButton = document.getElementById("newButton");
     const groupNameInput = document.getElementById("groupNameInput");
 
+    // DOM elementlari mavjudligini tekshirish
+    console.log(dropdownButton); // null emasligini tekshiring
+    console.log(groupNameInput); // null emasligini tekshiring
+
+    function validateInput(groupName) {
+    if (!groupName || groupName.length < 3) {
+        alert("❌ Guruh nomi kamida 3 ta harf bo‘lishi kerak!");
+        return false;
+    }
+    return true;
+}
+
     if (!dropdownButton || !groupNameInput) {
         console.error("❌ newButton yoki groupNameInput topilmadi! HTML-ni tekshiring.");
         return;
@@ -73,7 +85,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     async function createGroup(groupName) {
-        console.log("🚀 Guruh yaratish so‘rovi yuborildi:", groupName);
         const response = await fetch("http://127.0.0.1:7777/api/create-group", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -89,8 +100,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     async function handleResponse(response) {
         const rawData = await response.text();
-        console.log("🔍 Serverdan kelayotgan javob:", rawData);
-
         let data;
         try {
             data = JSON.parse(rawData);
@@ -106,6 +115,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+
+
+
+
+
+
+
+
+
+console.log(document.getElementById("newButton")); // null emasligini tekshiring
+console.log(document.getElementById("groupNameInput")); // null emasligini tekshiring
 
 async function loadGroups() {
     try {
