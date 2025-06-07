@@ -337,7 +337,18 @@ document.addEventListener("alpine:init", () => {
             }
         },
 
-        
+        confirmGroup() {
+            if (this.selectedUsers.length === 0) {
+                Swal.fire({
+                    icon: "error",
+                    title: "Diqqat!",
+                    text: "❌ Guruhga kamida 1 foydalanuvchi qo‘shilishi kerak!",
+                    confirmButtonColor: "#d33"
+                });
+                return;
+            }
+
+            
 });
 
 
