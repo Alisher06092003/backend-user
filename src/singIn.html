@@ -364,7 +364,12 @@ document.addEventListener("alpine:init", () => {
                         title: "Muvaffaqiyat!",
                         text: "✅ Guruh muvaffaqiyatli yaratildi!",
                         confirmButtonColor: "#28a745"
-                  
+                    });
+                } else {
+                    throw new Error("❌ Serverda xatolik yuz berdi!");
+                }
+            })
+            
         }
     }));
 });
