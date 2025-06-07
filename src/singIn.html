@@ -356,7 +356,10 @@ document.addEventListener("alpine:init", () => {
                     members: this.selectedUsers
                 })
             })
-            
+            .then(response => {
+                if (response.ok) {
+                    this.step = "complete";
+                   
         }
     }));
 });
