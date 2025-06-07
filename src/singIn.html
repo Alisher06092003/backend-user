@@ -359,7 +359,12 @@ document.addEventListener("alpine:init", () => {
             .then(response => {
                 if (response.ok) {
                     this.step = "complete";
-                   
+                    Swal.fire({
+                        icon: "success",
+                        title: "Muvaffaqiyat!",
+                        text: "✅ Guruh muvaffaqiyatli yaratildi!",
+                        confirmButtonColor: "#28a745"
+                  
         }
     }));
 });
