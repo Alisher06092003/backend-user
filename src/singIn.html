@@ -309,7 +309,8 @@ document.addEventListener("alpine:init", () => {
                 const groupName = this.groupName.trim();
                 if (groupName.length < 3) {
                     Swal.fire({
-                       
+                        icon: "warning",
+                        
                     });
                     return; // 🔥 **Noto‘g‘ri bo‘lsa, bosqich o‘zgarmaydi**
                 }
