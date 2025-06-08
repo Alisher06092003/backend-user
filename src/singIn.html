@@ -282,62 +282,7 @@ document.addEventListener("alpine:init", () => {
         selectedUsers: [],
         users: [],
 
-        async loadUsers() {
-            try {
-                const response = await fetch("http://localhost:7777/api/students");
-                this.users = await response.json();
-            } catch (error) {
-                Swal.fire({
-                    icon: "error",
-                    title: "Xatolik!",
-                    text: "❌ Foydalanuvchilarni yuklashda muammo yuz berdi!",
-                    confirmButtonColor: "#d33"
-                });
-            }
-        },
-
-        toggleUser(userId) {
-            if (this.selectedUsers.includes(userId)) {
-                this.selectedUsers = this.selectedUsers.filter(id => id !== userId);
-            } else {
-                this.selectedUsers.push(userId);
-            }
-        },
-
-        nextStep() {
-            if (this.step === 1) { 
-                const groupName = this.groupName.trim();
-                if (groupName.length < 3) {
-                    Swal.fire({
-                        icon: "warning",
-                        title: "Xatolik!",
-                        text: "❌ Guruh nomi kamida 3 ta harf bo‘lishi kerak!",
-                        confirmButtonColor: "#3085d6"
-                    });
-                    return; // 🔥 **Noto‘g‘ri bo‘lsa, bosqich o‘zgarmaydi**
-                }
-                this.step++; // ✅ **Faqat to‘g‘ri nom yozilganda keyingi bosqichga o‘tadi**
-            } else if (this.step === 2) {
-                if (this.selectedUsers.length === 0) {
-                    Swal.fire({
-                        icon: "warning",
-                        title: "Ogohlantirish!",
-                        text: "❌ Kamida 1 foydalanuvchini tanlang!",
-                        confirmButtonColor: "#3085d6"
-                    });
-                    return; // 🔥 **Noto‘g‘ri bo‘lsa, bosqich o‘zgarmaydi**
-                }
-                this.step++;
-            }
-        },
-
-        previousStep() {
-            if (this.step > 1) {
-                this.step--;
-            }
-        },
-
-        confirmGroup() {
+        
             if (this.selectedUsers.length === 0) {
                 Swal.fire({
                     icon: "error",
@@ -380,6 +325,7 @@ document.addEventListener("alpine:init", () => {
         }
     }));
 });
+
 
 
 	</script>
