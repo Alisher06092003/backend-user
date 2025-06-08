@@ -306,7 +306,12 @@ document.addEventListener("alpine:init", () => {
 
         nextStep() {
             if (this.step === 1) { 
-                
+                const groupName = this.groupName.trim();
+                if (groupName.length < 3) {
+                   
+                    return; // 🔥 **Noto‘g‘ri bo‘lsa, bosqich o‘zgarmaydi**
+                }
+                this.step++;
             }
         },
 
