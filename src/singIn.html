@@ -282,7 +282,34 @@ document.addEventListener("alpine:init", () => {
         selectedUsers: [],
         users: [],
 
-        
+        async loadUsers() {
+            try {
+                const response = await fetch("http://localhost:7777/api/students");
+                this.users = await response.json();
+            } catch (error) {
+                Swal.fire({
+                    icon: "error",
+                    title: "Xatolik!",
+                    text: "❌ Foydalanuvchilarni yuklashda muammo yuz berdi!",
+                    confirmButtonColor: "#d33"
+                });
+            }
+        },
+
+      
+        previousStep() {
+            if (this.step > 1) {
+                this.step--;
+            }
+        },
+
+
+
+
+
+
+
+        confirmGroup() {
             if (this.selectedUsers.length === 0) {
                 Swal.fire({
                     icon: "error",
