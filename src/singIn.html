@@ -296,7 +296,16 @@ document.addEventListener("alpine:init", () => {
             }
         },
 
-      
+        toggleUser(userId) {
+            if (this.selectedUsers.includes(userId)) {
+                this.selectedUsers = this.selectedUsers.filter(id => id !== userId);
+            } else {
+                this.selectedUsers.push(userId);
+            }
+        },
+
+        
+
         previousStep() {
             if (this.step > 1) {
                 this.step--;
@@ -308,7 +317,7 @@ document.addEventListener("alpine:init", () => {
 
 
 
-
+        
         confirmGroup() {
             if (this.selectedUsers.length === 0) {
                 Swal.fire({
