@@ -320,7 +320,10 @@ document.addEventListener("alpine:init", () => {
             } else if (this.step === 2) {
                 if (this.selectedUsers.length === 0) {
                     Swal.fire({
-                        "
+                        icon: "warning",
+                        title: "Ogohlantirish!",
+                        text: "❌ Kamida 1 foydalanuvchini tanlang!",
+                        confirmButtonColor: "#3085d6"
                     });
                     return; // 🔥 **Noto‘g‘ri bo‘lsa, bosqich o‘zgarmaydi**
                 }
