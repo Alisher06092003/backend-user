@@ -320,9 +320,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const dropdownButton = document.getElementById("newButton");
     const groupNameInput = document.getElementById("groupNameInput");
 
-  
-}
-	</script>
+    // DOM elementlari mavjudligini tekshirish
+    if (!dropdownButton || !groupNameInput) {
+        console.error("❌ newButton yoki groupNameInput topilmadi! HTML-ni tekshiring.");
+        return; // Agar elementlar topilmasa, funksiyani to'xtat
+    }
+
 
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
