@@ -289,6 +289,7 @@ async function loadGroups() {
         });
 
     } catch (error) {
-      
+        console.error("❌ Xatolik:", error);
+        
     }
 }
