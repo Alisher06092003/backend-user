@@ -290,6 +290,7 @@ async function loadGroups() {
 
     } catch (error) {
         console.error("❌ Xatolik:", error);
-        
+        const tbody = document.querySelector("tbody");
+        tbody.innerHTML = "<tr><td colspan='4'>❌ Guruhlar yuklanmadi!</td></tr>";
     }
 }
