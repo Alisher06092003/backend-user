@@ -123,7 +123,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-
 console.log(document.getElementById("newButton")); // null emasligini tekshiring
 console.log(document.getElementById("groupNameInput")); // null emasligini tekshiring
 
@@ -269,3 +268,6 @@ document.addEventListener('DOMContentLoaded', loadGroups);
 
 
 
+async function loadGroups() {
+   
+}
