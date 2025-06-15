@@ -269,5 +269,7 @@ document.addEventListener('DOMContentLoaded', loadGroups);
 
 
 async function loadGroups() {
-   
+    try {
+       
+    }
 }
