@@ -270,6 +270,11 @@ document.addEventListener('DOMContentLoaded', loadGroups);
 
 async function loadGroups() {
     try {
-       
+        const response = await fetch("http://127.0.0.1:7777/api/groups");
+        if (!response.ok) {
+            throw new Error("❌ Guruhlarni olishda xatolik yuz berdi!");
+        }
+
+        
     }
 }
