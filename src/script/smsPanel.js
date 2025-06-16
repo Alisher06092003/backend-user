@@ -272,5 +272,6 @@ async function loadGroups() {
             throw new Error("❌ Guruhlarni olishda xatolik yuz berdi!");
         }
 
-       
+        const groups = await response.json();
+        
 }
