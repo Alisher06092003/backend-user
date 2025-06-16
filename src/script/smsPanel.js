@@ -276,5 +276,10 @@ async function loadGroups() {
         const tbody = document.querySelector("tbody");
         tbody.innerHTML = ""; // Ro'yxatni tozalash
 
-       
+        if (!groups.length) {
+            tbody.innerHTML = "<tr><td colspan='4' class='text-center'>❌ Hech qanday guruh topilmadi!</td></tr>";
+            return;
+        }
+
+      
 }
