@@ -273,5 +273,6 @@ async function loadGroups() {
         }
 
         const groups = await response.json();
+        const tbody = document.querySelector("tbody");
         
 }
