@@ -139,6 +139,7 @@ app.put("/api/students/:id", async (req, res) => {
             return res.status(400).json({ message: "❌ Noto‘g‘ri ID formati!" });
         }
 
+        const updatedStudent = await Student.findByIdAndUpdate(
        
 });
 
