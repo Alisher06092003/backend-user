@@ -156,7 +156,11 @@ app.put("/api/students/:id", async (req, res) => {
     }
 });
 
-
+// API - Guruh yaratish
+app.post("/api/create-group", async (req, res) => {
+    try {
+       
+});
 
 // Guruh nomini tekshirish funksiyasi
 function validateGroupName(name) {
