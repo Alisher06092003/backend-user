@@ -135,7 +135,11 @@ app.put("/api/students/:id", async (req, res) => {
         const studentId = req.params.id;
         const updatedData = req.body;
 
-      
+        if (!mongoose.Types.ObjectId.isValid(studentId)) {
+           
+        }
+
+       
 });
 
 
