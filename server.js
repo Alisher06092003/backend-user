@@ -131,7 +131,10 @@ app.get("/api/students/:id", async (req, res) => {
 
 // Berilgan IDga ega Foydalanuvchini yangilaydi.
 app.put("/api/students/:id", async (req, res) => {
-    
+    try {
+        const studentId = req.params.id;
+       
+      
 });
 
 
