@@ -133,7 +133,8 @@ app.get("/api/students/:id", async (req, res) => {
 app.put("/api/students/:id", async (req, res) => {
     try {
         const studentId = req.params.id;
-       
+        const updatedData = req.body;
+
       
 });
 
