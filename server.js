@@ -141,7 +141,8 @@ app.put("/api/students/:id", async (req, res) => {
 
         const updatedStudent = await Student.findByIdAndUpdate(
             studentId,
-           
+            updatedData,
+            { new: true, runValidators: true }
         );
 
        
