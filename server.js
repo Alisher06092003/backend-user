@@ -1,8 +1,10 @@
+// Eng Assosiy codlar baza bilan ishlash mongodb va postman ulanishlar
 import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors'
 import Student from "./models/student.js";
 
+// Serverni ulash yani korish 
 const app = express();
 const port = 7777;
 
@@ -75,13 +77,13 @@ app.get("/api/users", async (req, res) => {
     try {
         const users = await usersCollection.find().toArray();
 
-        // ✅ Foydalanuvchilarga indeks berish
+        // Foydalanuvchilarga indeks berish
         const indexedUsers = users.map((user, index) => ({
-            index: index + 1,  // ✅ 1 dan boshlab indeks qo‘shish
-            ...user            // ✅ Barcha ma’lumotlarni saqlash
+            index: index + 1,  // 1 dan boshlab indeks qo‘shish
+            ...user            // Barcha ma’lumotlarni saqlash
         }));
 
-        res.json(indexedUsers); // 🟢 Indeks bilan qaytarish
+        res.json(indexedUsers); // Indeks bilan qaytarish
     } catch (error) {
         console.error("❌ Xatolik:", error);
         res.status(500).json({ error: "Ichki server xatosi!" });
@@ -129,50 +131,10 @@ app.get("/api/students/:id", async (req, res) => {
 
 // Berilgan IDga ega Foydalanuvchini yangilaydi.
 app.put("/api/students/:id", async (req, res) => {
-    try {
-        const studentId = req.params.id;
-        const updatedData = req.body;
-
-        if (!mongoose.Types.ObjectId.isValid(studentId)) {
-            return res.status(400).json({ message: "❌ Noto‘g‘ri ID formati!" });
-        }
-
-        const updatedStudent = await Student.findByIdAndUpdate(
-            studentId,
-            updatedData,
-            { new: true, runValidators: true }
-        );
-
-        if (!updatedStudent) {
-            return res.status(404).json({ message: "❌ Foydalanuvchi topilmadi!" });
-        }
-
-        res.json({ message: "✅ Foydalanuvchi muvaffaqiyatli yangilandi!", student: updatedStudent });
-    } catch (error) {
-        console.error("❌ Xatolik:", error);
-        res.status(500).json({ message: "Ichki server xatosi!" });
-    }
+    
 });
 
-// API - Guruh yaratish
-app.post("/api/create-group", async (req, res) => {
-    try {
-        console.log("🔍 Kelayotgan ma’lumot:", req.body); // Kiritilayotgan ma’lumotni tekshirish
 
-        const { name } = req.body;
-        const validationError = validateGroupName(name);
-        if (validationError) return res.status(400).json({ message: validationError });
-
-        const newGroup = new Group({ name });
-        await newGroup.save();
-
-        console.log("✅ Guruh yaratildi:", newGroup); // Guruh to‘g‘ri saqlanganligini tekshirish
-        res.json({ message: "✅ Guruh muvaffaqiyatli yaratildi!", group: newGroup });
-    } catch (error) {
-        console.error("❌ Xatolik:", error);
-        res.status(500).json({ message: "❌ Server xatosi!", error: error.message });
-    }
-});
 
 // Guruh nomini tekshirish funksiyasi
 function validateGroupName(name) {
@@ -246,8 +208,3 @@ async function loadGroups() {
         document.querySelector("tbody").innerHTML = "<tr><td colspan='7'>❌ Guruhlar yuklanmadi!</td></tr>";
     }
 }
-
-
-
-
-
