@@ -136,7 +136,7 @@ app.put("/api/students/:id", async (req, res) => {
         const updatedData = req.body;
 
         if (!mongoose.Types.ObjectId.isValid(studentId)) {
-           
+            return res.status(400).json({ message: "❌ Noto‘g‘ri ID formati!" });
         }
 
        
