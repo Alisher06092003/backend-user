@@ -145,7 +145,11 @@ app.put("/api/students/:id", async (req, res) => {
             { new: true, runValidators: true }
         );
 
-       
+        if (!updatedStudent) {
+            return res.status(404).json({ message: "❌ Foydalanuvchi topilmadi!" });
+        }
+
+    
 });
 
 
