@@ -9,7 +9,8 @@ document.getElementById("saveButton").addEventListener("click", async () => {
 
     // Maydonlarni tekshirish
     if (!studentData.firstName || !studentData.lastName || studentData.group === "Gurux Tanlng") {
-        
+        showToast("❌ Barcha maydonlarni to‘ldiring!", "red");
+        return;
     }
 
     
