@@ -31,6 +31,9 @@ document.getElementById("saveButton").addEventListener("click", async () => {
         } else {
             showToast("❌ Xatolik yuz berdi!", "red");
         }
+    } catch (error) {
+        console.error("Serverga so‘rov yuborishda xatolik:", error);
+        showToast("⚠️ Ulanish xatosi!", "red");
     }
 });
 
