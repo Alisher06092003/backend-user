@@ -15,7 +15,9 @@ document.getElementById("saveButton").addEventListener("click", async () => {
 
     try {
         const response = await fetch("http://localhost:7777/api/students", {
-          
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(studentData)
         });
 
        
