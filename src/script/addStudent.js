@@ -7,5 +7,11 @@ document.getElementById("saveButton").addEventListener("click", async () => {
         group: document.getElementById("grid-state").value
     };
 
-  
+    // Maydonlarni tekshirish
+    if (!studentData.firstName || !studentData.lastName || studentData.group === "Gurux Tanlng") {
+        
+    }
+
+    
 });
+
