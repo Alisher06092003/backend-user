@@ -13,6 +13,12 @@ document.getElementById("saveButton").addEventListener("click", async () => {
         return;
     }
 
-    
+    try {
+        const response = await fetch("http://localhost:7777/api/students", {
+          
+        });
+
+       
+    }
 });
 
