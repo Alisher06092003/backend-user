@@ -4,7 +4,7 @@ document.getElementById("saveButton").addEventListener("click", async () => {
       
        
         
-        
+        group: document.getElementById("grid-state").value
     };
 
   
