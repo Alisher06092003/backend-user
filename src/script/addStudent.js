@@ -20,7 +20,17 @@ document.getElementById("saveButton").addEventListener("click", async () => {
             body: JSON.stringify(studentData)
         });
 
-       
+        if (response.ok) {
+            showToast("✅ O‘quvchi muvaffaqiyatli qo‘shildi!", "green");
+            // Formani tozalash
+            document.getElementById("grid-first-name").value = '';
+            document.getElementById("grid-last-name").value = '';
+            document.getElementById("phone1").value = '';
+            document.getElementById("phone2").value = '';
+            document.getElementById("grid-state").value = 'Gurux Tanlng'; // O'zgarishi mumkin
+        } else {
+            showToast("❌ Xatolik yuz berdi!", "red");
+        }
     }
 });
 
