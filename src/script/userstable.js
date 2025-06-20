@@ -321,6 +321,14 @@ function saveUserChanges() {
     showSuccess("✅ Foydalanuvchi muvaffaqiyatli yangilandi!");
     setTimeout(() => location.reload(), 3000);
 })
+.catch(error => {
+    console.error("Xatolik:", error);
+    showError("Tahrirlashda muammo yuz berdi!");
+});
+
+}
+
+console.log("Saqlash tugmasi ID:", document.getElementById("saveEditBtn").getAttribute("data-user-id"));
 
 
 
