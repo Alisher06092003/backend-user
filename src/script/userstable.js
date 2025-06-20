@@ -306,7 +306,7 @@ function saveUserChanges() {
         firstName: document.getElementById("editFirstName").value,
         lastName: document.getElementById("editLastName").value,
         phone1: document.getElementById("editPhone1").value,
-       
+        phone2: document.getElementById("editPhone2").value,
         
     };
 
