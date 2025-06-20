@@ -318,7 +318,7 @@ function saveUserChanges() {
 .then(response => response.json()) // ✅ Javobni tekshirish
 .then(data => {
     console.log("Server javobi:", data); // 🛠 Konsolda tekshirish!
-   
+    showSuccess("✅ Foydalanuvchi muvaffaqiyatli yangilandi!");
     setTimeout(() => location.reload(), 3000);
 })
 
