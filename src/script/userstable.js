@@ -295,10 +295,15 @@ function editUser(userId) {
 
 
 function saveUserChanges() {
+    const userId = document.getElementById("saveEditBtn").getAttribute("data-user-id");
+
+    if (!userId || userId.length !== 24) {
+        showError("❌ Noto‘g‘ri foydalanuvchi ID!");
+        return;
+    }
+
    
 })
-
-
 
 
 
