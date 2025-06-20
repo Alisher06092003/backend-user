@@ -317,7 +317,9 @@ function saveUserChanges() {
 })
 .then(response => response.json()) // ✅ Javobni tekshirish
 .then(data => {
-    
+    console.log("Server javobi:", data); // 🛠 Konsolda tekshirish!
+   
+   
 })
 
 
