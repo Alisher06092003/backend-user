@@ -310,6 +310,10 @@ function saveUserChanges() {
         group: document.getElementById("editGroup").value,
     };
 
+    fetch(`http://localhost:7777/api/students/${userId}`, {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(updatedUser),
 })
 
 
