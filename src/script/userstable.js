@@ -319,7 +319,7 @@ function saveUserChanges() {
 .then(data => {
     console.log("Server javobi:", data); // 🛠 Konsolda tekshirish!
    
-   
+    setTimeout(() => location.reload(), 3000);
 })
 
 
