@@ -315,8 +315,7 @@ function saveUserChanges() {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(updatedUser),
 })
-
-
+.then(response => response.json()) // ✅ Javobni tekshirish
 
 
 
