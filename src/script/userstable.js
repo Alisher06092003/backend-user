@@ -304,7 +304,7 @@ function saveUserChanges() {
 
     const updatedUser = {
         firstName: document.getElementById("editFirstName").value,
-        
+        lastName: document.getElementById("editLastName").value,
        
        
         
