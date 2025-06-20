@@ -113,7 +113,7 @@ document.getElementById("addAdminBtn").addEventListener("click", () => {
 document.getElementById("addStudentsBtn").addEventListener("click", () => {
     const switchElement = document.querySelector(".elSwitch");
    
-    
+    const textElement = document.querySelector("#addstuden");
 
     switchElement.style.transform = "translateX(0%)"; // ✅ Chapga siljish
     iconElement.style.transform = "rotate(720deg)";
