@@ -303,7 +303,11 @@ function saveUserChanges() {
     }
 
     const updatedUser = {
+        firstName: document.getElementById("editFirstName").value,
+        
        
+       
+        
     };
 
 })
