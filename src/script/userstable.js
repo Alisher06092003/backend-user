@@ -130,6 +130,13 @@ document.getElementById("registeredBtn").addEventListener("click", () => {
     textElement.textContent = "Registered Users";
 });
 
+document.getElementById("addAdminBtn").addEventListener("click", () => {
+    const switchElement = document.querySelector(".elSwitch");
+    const iconElement = document.querySelector(".elSwitch svg");
+    const textElement = document.querySelector("#addstuden");
+
+   
+});
 
 async function editUser(userId) {
     try {
