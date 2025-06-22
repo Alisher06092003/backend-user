@@ -115,7 +115,7 @@ document.getElementById("addStudentsBtn").addEventListener("click", () => {
     const iconElement = document.querySelector(".elSwitch svg");
     const textElement = document.querySelector("#addstuden");
 
-   
+    switchElement.style.transform = "translateX(0%)"; // ✅ Chapga siljish
    
    
 });
