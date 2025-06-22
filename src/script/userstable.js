@@ -117,7 +117,7 @@ document.getElementById("addStudentsBtn").addEventListener("click", () => {
 
     switchElement.style.transform = "translateX(0%)"; // ✅ Chapga siljish
     iconElement.style.transform = "rotate(720deg)";
-   
+    textElement.textContent = "Add Students";
 });
 
 
