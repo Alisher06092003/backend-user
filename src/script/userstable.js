@@ -135,7 +135,9 @@ document.getElementById("addAdminBtn").addEventListener("click", () => {
     const iconElement = document.querySelector(".elSwitch svg");
     const textElement = document.querySelector("#addstuden");
 
-   
+    switchElement.style.transform = "translateX(200%)"; // ✅ O‘ngga siljish
+    iconElement.style.transform = "rotate(180deg)";
+    textElement.textContent = "Add Admin";
 });
 
 async function editUser(userId) {
