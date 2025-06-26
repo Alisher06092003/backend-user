@@ -111,54 +111,18 @@ document.getElementById("addAdminBtn").addEventListener("click", () => {
 
 // Additional window Click cinopka 
 document.getElementById("addStudentsBtn").addEventListener("click", () => {
-    const switchElement = document.querySelector(".elSwitch");
-    const iconElement = document.querySelector(".elSwitch svg");
-    const textElement = document.querySelector("#addstuden");
+   
+    
+    
 
-    switchElement.style.transform = "translateX(0%)"; // ✅ Chapga siljish
-    iconElement.style.transform = "rotate(720deg)";
-    textElement.textContent = "Add Students";
+   
+   
+    
 });
 
-document.getElementById("registeredBtn").addEventListener("click", () => {
-    const switchElement = document.querySelector(".elSwitch");
-    const iconElement = document.querySelector(".elSwitch svg");
-    const textElement = document.querySelector("#addstuden");
 
-    switchElement.style.transform = "translateX(100%)"; // ✅ O‘rtaga siljish
-    iconElement.style.transform = "rotate(360deg)";
-    textElement.textContent = "Registered Users";
-});
 
-document.getElementById("addAdminBtn").addEventListener("click", () => {
-    const switchElement = document.querySelector(".elSwitch");
-    const iconElement = document.querySelector(".elSwitch svg");
-    const textElement = document.querySelector("#addstuden");
 
-    switchElement.style.transform = "translateX(200%)"; // ✅ O‘ngga siljish
-    iconElement.style.transform = "rotate(180deg)";
-    textElement.textContent = "Add Admin";
-});
-
-async function editUser(userId) {
-    try {
-        const response = await fetch(`http://localhost:7777/api/students/${userId}`);
-        const data = await response.json();
-
-        // Formani to'ldirish
-        document.getElementById('grid-first-name').value = data.firstName;
-        document.getElementById('grid-last-name').value = data.lastName;
-        document.getElementById('phone1').value = data.phone1;
-        document.getElementById('phone2').value = data.phone2;
-
-        // Saqlash tugmasini yangilash
-        document.getElementById('saveButton').onclick = function() {
-            updateUser(userId);
-        };
-    } catch (error) {
-        console.error("Xatolik:", error);
-    }
-}
 
 
 
