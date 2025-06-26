@@ -120,7 +120,10 @@ document.getElementById("addStudentsBtn").addEventListener("click", () => {
     textElement.textContent = "Add Students";
 });
 
-
+document.getElementById("registeredBtn").addEventListener("click", () => {
+   
+   
+});
 
 
 
