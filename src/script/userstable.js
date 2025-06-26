@@ -125,7 +125,9 @@ document.getElementById("registeredBtn").addEventListener("click", () => {
     const iconElement = document.querySelector(".elSwitch svg");
     const textElement = document.querySelector("#addstuden");
 
-   
+    switchElement.style.transform = "translateX(100%)"; // ✅ O‘rtaga siljish
+    iconElement.style.transform = "rotate(360deg)";
+    textElement.textContent = "Registered Users";
 });
 
 
