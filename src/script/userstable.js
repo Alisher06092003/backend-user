@@ -221,7 +221,7 @@ function showConfirmDialog(text, confirmCallback) {
         
        
         
-    }).
+    }).then((result) => {
        
     });
 }
