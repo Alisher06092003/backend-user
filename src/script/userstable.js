@@ -121,7 +121,7 @@ document.getElementById("addStudentsBtn").addEventListener("click", () => {
 });
 
 document.getElementById("registeredBtn").addEventListener("click", () => {
-   
+    const switchElement = document.querySelector(".elSwitch");
     
    
 
