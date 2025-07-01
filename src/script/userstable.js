@@ -215,7 +215,7 @@ function showConfirmDialog(text, confirmCallback) {
         text: text,
         icon: "warning",
         iconColor: "red",
-        
+        color: "red",
        
         
         
