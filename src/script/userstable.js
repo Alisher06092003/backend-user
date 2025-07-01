@@ -126,7 +126,7 @@ document.getElementById("registeredBtn").addEventListener("click", () => {
     const textElement = document.querySelector("#addstuden");
 
     switchElement.style.transform = "translateX(100%)"; // ✅ O‘rtaga siljish
-  
+    iconElement.style.transform = "rotate(360deg)";
    
 });
 
