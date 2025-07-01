@@ -223,7 +223,7 @@ function showConfirmDialog(text, confirmCallback) {
         reverseButtons: true,
     }).then((result) => {
         if (result.isConfirmed) {
-          
+            confirmCallback(); // Agar OK bosilsa, davom ettiradi
         }
     });
 }
