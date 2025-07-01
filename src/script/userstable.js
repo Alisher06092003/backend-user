@@ -222,7 +222,9 @@ function showConfirmDialog(text, confirmCallback) {
         confirmButtonColor: "red",
         reverseButtons: true,
     }).then((result) => {
-       
+        if (result.isConfirmed) {
+          
+        }
     });
 }
 
