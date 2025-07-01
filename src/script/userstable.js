@@ -218,7 +218,7 @@ function showConfirmDialog(text, confirmCallback) {
         color: "red",
         showCancelButton: true,
         confirmButtonText: "OK",
-        
+        cancelButtonText: "Bekor qilish",
        
         
     }).then((result) => {
