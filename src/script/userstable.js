@@ -220,7 +220,7 @@ function showConfirmDialog(text, confirmCallback) {
         confirmButtonText: "OK",
         cancelButtonText: "Bekor qilish",
         confirmButtonColor: "red",
-        
+        reverseButtons: true,
     }).then((result) => {
        
     });
