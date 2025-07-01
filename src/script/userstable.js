@@ -211,7 +211,7 @@ function deleteSelectedUsers() {
 
 
 function showConfirmDialog(text, confirmCallback) {
-   
+    Swal.fire({
        
       
        
