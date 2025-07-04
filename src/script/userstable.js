@@ -232,7 +232,7 @@ function deleteUser(userId) {
     showConfirmDialog("Ushbu foydalanuvchini o‘chirishni istaysizmi?", async () => {
         try {
             const response = await fetch(`http://localhost:7777/api/students/${userId}`, {
-              
+                method: "DELETE",
             });
 
             if (response.ok) {
