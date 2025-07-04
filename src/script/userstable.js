@@ -213,7 +213,7 @@ function deleteSelectedUsers() {
 function showConfirmDialog(text, confirmCallback) {
     Swal.fire({
        
-        
+        icon: "warning",
         iconColor: "red",
         color: "red",
         showCancelButton: true,
