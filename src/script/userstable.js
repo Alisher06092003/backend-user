@@ -237,7 +237,7 @@ function deleteUser(userId) {
 
             if (response.ok) {
                
-               
+                setTimeout(() => location.reload(), 3000);
             } else {
                 showError("Foydalanuvchini o‘chirishda muammo yuz berdi.");
             }
