@@ -216,7 +216,7 @@ function showConfirmDialog(text, confirmCallback) {
         
        
        
-       
+        showCancelButton: true,
         confirmButtonText: "OK",
         cancelButtonText: "Bekor qilish",
         confirmButtonColor: "red",
