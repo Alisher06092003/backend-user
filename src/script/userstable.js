@@ -212,18 +212,18 @@ function deleteSelectedUsers() {
 
 function showConfirmDialog(text, confirmCallback) {
     Swal.fire({
-        text: text,
-        icon: "warning",
-        iconColor: "red",
-        color: "red",
-        showCancelButton: true,
-        confirmButtonText: "OK",
-        cancelButtonText: "Bekor qilish",
-        confirmButtonColor: "red",
-        reverseButtons: true,
+       
+        
+       
+       
+       
+        
+        
+        
+       
     }).then((result) => {
         if (result.isConfirmed) {
-            confirmCallback(); // Agar OK bosilsa, davom ettiradi
+            
         }
     });
 }
@@ -232,12 +232,12 @@ function deleteUser(userId) {
     showConfirmDialog("Ushbu foydalanuvchini o‘chirishni istaysizmi?", async () => {
         try {
             const response = await fetch(`http://localhost:7777/api/students/${userId}`, {
-                method: "DELETE",
+              
             });
 
             if (response.ok) {
-                showSuccess("Foydalanuvchi muvaffaqiyatli o‘chirildi!");
-                setTimeout(() => location.reload(), 3000);
+               
+               
             } else {
                 showError("Foydalanuvchini o‘chirishda muammo yuz berdi.");
             }
