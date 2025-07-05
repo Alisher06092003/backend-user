@@ -57,7 +57,7 @@ async function handleGroupCreation() {
 
     if (!validateInput(groupName) || selectedUsers.length === 0) {
       
-       
+        return;
     }
 
     try {
