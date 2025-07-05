@@ -56,3 +56,8 @@ async function handleGroupCreation() {
   
 }
 
+// Guruh yaratish uchun serverga so'rov yuborish
+async function createGroup(groupName, members) {
+    
+    return response;
+}
