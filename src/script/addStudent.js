@@ -62,7 +62,7 @@ async function handleGroupCreation() {
 
     try {
       
-        
+        await handleResponse(response);
         groupNameInput.value = ""; // Inputni tozalash
         selectedUsers = []; // Tanlangan foydalanuvchilarni tozalash
         loadGroups(); // Ro'yxatni yangilash
