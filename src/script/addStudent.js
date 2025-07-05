@@ -53,7 +53,23 @@ function showToast(message, color) {
 
 
 async function handleGroupCreation() {
-  
+    const groupName = groupNameInput.value.trim();
+
+    if {
+      
+       
+    }
+
+    try {
+      
+        
+       
+        
+        
+    } 
+       
+        
+    }
 }
 
 // Guruh yaratish uchun serverga so'rov yuborish
