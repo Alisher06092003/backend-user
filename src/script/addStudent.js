@@ -66,7 +66,7 @@ async function handleGroupCreation() {
        
         
         
-    } 
+    } catch (error) {
         console.error("❌ Xatolik:", error);
         alert("❌ Guruh yaratishda muammo yuz berdi!");
     }
