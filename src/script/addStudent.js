@@ -58,6 +58,9 @@ async function handleGroupCreation() {
 
 // Guruh yaratish uchun serverga so'rov yuborish
 async function createGroup(groupName, members) {
-    
+    const response = await fetch("http://127.0.0.1:7777/api/create-group", {
+     
+        throw new Error(errorData.message || "Server xatosi!");
+    }
     return response;
 }
