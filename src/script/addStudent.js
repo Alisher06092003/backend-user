@@ -67,7 +67,7 @@ async function handleGroupCreation() {
         
         
     } 
-       
+        console.error("❌ Xatolik:", error);
         alert("❌ Guruh yaratishda muammo yuz berdi!");
     }
 }
