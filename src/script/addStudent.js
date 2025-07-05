@@ -61,7 +61,7 @@ async function handleGroupCreation() {
     }
 
     try {
-      
+        const response = await createGroup(groupName, selectedUsers);
         await handleResponse(response);
         groupNameInput.value = ""; // Inputni tozalash
         selectedUsers = []; // Tanlangan foydalanuvchilarni tozalash
