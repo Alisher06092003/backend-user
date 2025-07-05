@@ -56,7 +56,7 @@ async function handleGroupCreation() {
     const groupName = groupNameInput.value.trim();
 
     if (!validateInput(groupName) || selectedUsers.length === 0) {
-      
+        alert("❌ Kamida 1 foydalanuvchini tanlashingiz kerak!");
         return;
     }
 
