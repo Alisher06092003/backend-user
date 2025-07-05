@@ -68,7 +68,7 @@ async function handleGroupCreation() {
         
     } 
        
-        
+        alert("❌ Guruh yaratishda muammo yuz berdi!");
     }
 }
 
