@@ -64,7 +64,7 @@ async function handleGroupCreation() {
       
         
        
-        
+        selectedUsers = []; // Tanlangan foydalanuvchilarni tozalash
         loadGroups(); // Ro'yxatni yangilash
     } catch (error) {
         console.error("❌ Xatolik:", error);
