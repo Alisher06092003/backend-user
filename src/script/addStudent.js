@@ -55,7 +55,7 @@ function showToast(message, color) {
 async function handleGroupCreation() {
     const groupName = groupNameInput.value.trim();
 
-    if {
+    if (!validateInput(groupName) || selectedUsers.length === 0) {
       
        
     }
