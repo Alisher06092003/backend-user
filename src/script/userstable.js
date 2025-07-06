@@ -282,7 +282,7 @@ function editUser(userId) {
           
            
 
-          
+            document.getElementById("editFirstName").value = user.firstName ?? "";
             document.getElementById("editLastName").value = user.lastName ?? "";
             document.getElementById("editPhone1").value = user.phone1 ?? "";
             document.getElementById("editPhone2").value = user.phone2 ?? "";
