@@ -274,31 +274,30 @@ function editUser(userId) {
         return;
     }
 
-    fetch(`http://localhost:7777/api/students/${encodeURI(userId)}`)
-        .then(response => response.json())
-        .then(user => {
-            console.log("Yuklangan foydalanuvchi:", user); // 🛠 Konsolda tekshirish!
+    
+        
+       
+            
 
-            const modal = document.getElementById("editUserModal");
-            modal.classList.remove("hidden"); // ✅ Modalni ochish!
+          
+           
 
-            document.getElementById("editFirstName").value = user.firstName ?? "";
-            document.getElementById("editLastName").value = user.lastName ?? "";
-            document.getElementById("editPhone1").value = user.phone1 ?? "";
-            document.getElementById("editPhone2").value = user.phone2 ?? "";
-            document.getElementById("editGroup").value = user.group ?? "";
+          
+           
+            
+            
+            
 
-            document.getElementById("saveEditBtn").setAttribute("data-user-id", userId);
+           
         })
-        .catch(() => showError("❌ Foydalanuvchini yuklashda muammo"));
+       
 }
 
 
-function saveUserChanges() {
-    const userId = document.getElementById("saveEditBtn").getAttribute("data-user-id");
 
-    if (!userId || userId.length !== 24) {
-        showError("❌ Noto‘g‘ri foydalanuvchi ID!");
+   
+
+   "❌ Noto‘g‘ri foydalanuvchi ID!");
         return;
     }
 
