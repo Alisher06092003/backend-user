@@ -284,7 +284,7 @@ function editUser(userId) {
 
           
            
-            
+            document.getElementById("editPhone1").value = user.phone1 ?? "";
             document.getElementById("editPhone2").value = user.phone2 ?? "";
             document.getElementById("editGroup").value = user.group ?? "";
 
