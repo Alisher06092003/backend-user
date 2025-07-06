@@ -297,7 +297,8 @@ function editUser(userId) {
 
    
 
-   "❌ Noto‘g‘ri foydalanuvchi ID!");
+    if (!userId || userId.length !== 24) {
+        showError("❌ Noto‘g‘ri foydalanuvchi ID!");
         return;
     }
 
