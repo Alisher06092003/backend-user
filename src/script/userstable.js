@@ -276,7 +276,7 @@ function editUser(userId) {
 
     
         
-       
+        .then(user => {
             console.log("Yuklangan foydalanuvchi:", user); // 🛠 Konsolda tekshirish!
 
             const modal = document.getElementById("editUserModal");
