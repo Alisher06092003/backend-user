@@ -141,7 +141,7 @@ app.get("/api/students/:id", async (req, res) => {
 
        
           
-            
+            { new: true, runValidators: true }
         );
 
         if (!updatedStudent) {
