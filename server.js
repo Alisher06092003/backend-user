@@ -132,7 +132,7 @@ app.get("/api/students/:id", async (req, res) => {
 // Berilgan IDga ega Foydalanuvchini yangilaydi.
 
     try {
-        
+        const studentId = req.params.id;
         const updatedData = req.body;
 
         if (!mongoose.Types.ObjectId.isValid(studentId)) {
