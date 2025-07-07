@@ -148,7 +148,7 @@ app.get("/api/students/:id", async (req, res) => {
             
         }
 
-       
+        res.json({ message: "✅ Foydalanuvchi muvaffaqiyatli yangilandi!", student: updatedStudent });
     } catch (error) {
         console.error("❌ Xatolik:", error);
         res.status(500).json({ message: "Ichki server xatosi!" });
