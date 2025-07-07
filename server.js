@@ -140,7 +140,8 @@ app.get("/api/students/:id", async (req, res) => {
         }
 
        
-          
+            studentId,
+            updatedData,
             { new: true, runValidators: true }
         );
 
