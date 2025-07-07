@@ -150,7 +150,7 @@ app.get("/api/students/:id", async (req, res) => {
 
        
     } 
-       
+        console.error("❌ Xatolik:", error);
         res.status(500).json({ message: "Ichki server xatosi!" });
     }
 });
