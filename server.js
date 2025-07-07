@@ -145,7 +145,7 @@ app.get("/api/students/:id", async (req, res) => {
         );
 
        
-            
+            return res.status(404).json({ message: "❌ Foydalanuvchi topilmadi!" });
         }
 
         res.json({ message: "✅ Foydalanuvchi muvaffaqiyatli yangilandi!", student: updatedStudent });
