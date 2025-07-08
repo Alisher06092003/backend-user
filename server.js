@@ -193,7 +193,7 @@ app.get("/api/groups", async (req, res) => {
             const createdAt = new Date(group.createdAt);
             return {
                 ...group,
-               
+                year: createdAt.getFullYear(),
                 
                
                
