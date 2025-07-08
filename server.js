@@ -194,7 +194,7 @@ app.get("/api/groups", async (req, res) => {
             return {
                 ...group,
                 year: createdAt.getFullYear(),
-                
+                month: createdAt.toLocaleString('uz-UZ', { month: 'long' }),
                
                
             };
