@@ -205,7 +205,7 @@ app.get("/api/groups", async (req, res) => {
             group.formattedDate = `${group.day} ${group.month} ${group.year}`;
         });
 
-      
+        res.json(formattedGroups);
     } 
 });
 
