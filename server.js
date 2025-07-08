@@ -196,7 +196,7 @@ app.get("/api/groups", async (req, res) => {
                 year: createdAt.getFullYear(),
                 month: createdAt.toLocaleString('uz-UZ', { month: 'long' }),
                 day: createdAt.getDate(),
-               
+                time: createdAt.toLocaleTimeString('uz-UZ', { hour12: false })
             };
         });
 
