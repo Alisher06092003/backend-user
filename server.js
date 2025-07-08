@@ -201,7 +201,9 @@ app.get("/api/groups", async (req, res) => {
         });
 
         // Sanani "3 June 2025" formatida birlashtirish
-       
+        formattedGroups.forEach(group => {
+            
+        });
 
       
     } 
