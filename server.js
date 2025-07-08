@@ -176,7 +176,13 @@ app.post("/api/create-group", async (req, res) => {
     }
 });
 
-
+// Guruh nomini tekshirish funksiyasi
+function validateGroupName(name) {
+    if (!name || !name.trim()) {
+        return "❌ Guruh nomi kiritilmadi!";
+    }
+    return null; // Hech qanday xato bo'lmasa null qaytaramiz
+}
 
 // Guruhlarni Yuklash 
 app.get("/api/groups", async (req, res) => {
