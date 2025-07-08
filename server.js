@@ -192,6 +192,7 @@ app.get("/api/groups", async (req, res) => {
         const formattedGroups = groups.map(group => {
             const createdAt = new Date(group.createdAt);
             return {
+                ...group,
                
                 
                
