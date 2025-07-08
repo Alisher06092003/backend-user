@@ -207,7 +207,7 @@ app.get("/api/groups", async (req, res) => {
 
         res.json(formattedGroups);
     } catch (error) {
-        
+        console.error("❌ Xatolik:", error);
        
     }
 });
