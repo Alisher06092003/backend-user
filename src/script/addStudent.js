@@ -31,7 +31,7 @@ document.getElementById("saveButton").addEventListener("click", async () => {
         } else {
            
         }
-   
+    } catch (error) {
        
         
     }
