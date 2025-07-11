@@ -44,7 +44,7 @@ function showToast(message, color) {
     toast.classList.remove("hidden");
     toast.classList.add(`bg-${color}-500`);
 
-   
+    setTimeout(() => {
        
        
   
