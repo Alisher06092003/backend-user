@@ -47,5 +47,5 @@ function showToast(message, color) {
     setTimeout(() => {
         toast.classList.add("hidden");
         toast.classList.remove(`bg-${color}-500`);
-  
+    }, 3000); // 3 sekunddan so‘ng yashirin bo‘ladi
 }
