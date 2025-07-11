@@ -41,7 +41,7 @@ document.getElementById("saveButton").addEventListener("click", async () => {
 function showToast(message, color) {
     const toast = document.getElementById("toast");
     toast.textContent = message;
-    
+    toast.classList.remove("hidden");
     
 
    
