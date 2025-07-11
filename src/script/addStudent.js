@@ -32,7 +32,7 @@ document.getElementById("saveButton").addEventListener("click", async () => {
             showToast("❌ Xatolik yuz berdi!", "red");
         }
     } catch (error) {
-       
+        console.error("Serverga so‘rov yuborishda xatolik:", error);
         
     }
 });
