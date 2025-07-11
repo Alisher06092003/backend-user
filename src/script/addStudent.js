@@ -27,7 +27,7 @@ document.getElementById("saveButton").addEventListener("click", async () => {
             
           
             
-            // O'zgarishi mumkin
+            document.getElementById("grid-state").value = 'Gurux Tanlng'; // O'zgarishi mumkin
         } else {
            
         }
