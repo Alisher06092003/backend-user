@@ -33,7 +33,7 @@ document.getElementById("saveButton").addEventListener("click", async () => {
         }
     } catch (error) {
         console.error("Serverga so‘rov yuborishda xatolik:", error);
-        
+        showToast("⚠️ Ulanish xatosi!", "red");
     }
 });
 
