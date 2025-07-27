@@ -39,7 +39,8 @@ document.getElementById("saveButton").addEventListener("click", async () => {
 
 // Toast xabarini chiqarish funksiyasi
 function showToast(message, color) {
-   
+    const toast = document.getElementById("toast");
+    
    
 
    
