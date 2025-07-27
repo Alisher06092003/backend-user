@@ -10,7 +10,7 @@ document.getElementById("saveButton").addEventListener("click", async () => {
      
            
             
-"✅ O‘quvchi muvaffaqiyatli qo‘shildi!", "green");
+owToast("✅ O‘quvchi muvaffaqiyatli qo‘shildi!", "green");
             // Formani tozalash
             
             
