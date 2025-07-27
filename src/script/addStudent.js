@@ -27,7 +27,11 @@ document.getElementById("saveButton").addEventListener("click", async () => {
             
           
             
-ch (error) {
+            document.getElementById("grid-state").value = 'Gurux Tanlng'; // O'zgarishi mumkin
+        } else {
+            showToast("❌ Xatolik yuz berdi!", "red");
+        }
+    } catch (error) {
      
 });
 
