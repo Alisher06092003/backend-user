@@ -11,7 +11,7 @@ document.getElementById("saveButton").addEventListener("click", async () => {
            
             
 
-          
+            // Formani tozalash
             
             
           
