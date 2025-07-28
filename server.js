@@ -221,7 +221,7 @@ async function loadGroups() {
             throw new Error("❌ Guruhlarni olishda xatolik yuz berdi!");
         }
 
-        
+        const groups = await response.json();
         const tbody = document.querySelector("tbody");
         tbody.innerHTML = ""; // Ro'yxatni tozalash
 
