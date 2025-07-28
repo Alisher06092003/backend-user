@@ -223,7 +223,7 @@ async function loadGroups() {
 
         
        
-       
+        tbody.innerHTML = ""; // Ro'yxatni tozalash
 
         if (!groups.length) {
             tbody.innerHTML = "<tr><td colspan='7' class='text-center'>❌ Hech qanday guruh topilmadi!</td></tr>";
