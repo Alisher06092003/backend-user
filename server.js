@@ -230,5 +230,8 @@ async function loadGroups() {
             return;
         }
 
-       
+        groups.forEach(group => {
+          
+
+    } 
 }
