@@ -222,7 +222,7 @@ async function loadGroups() {
         }
 
         
-       
+        const tbody = document.querySelector("tbody");
         tbody.innerHTML = ""; // Ro'yxatni tozalash
 
         if (!groups.length) {
