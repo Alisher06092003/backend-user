@@ -240,7 +240,7 @@ async function loadGroups() {
                     <button class="showListBtn">Ro‘yxatni ko‘rish</button>
                 </td>
             `;
-          
+            tbody.appendChild(row);
         });
 
     } 
