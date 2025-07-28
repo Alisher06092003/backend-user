@@ -232,7 +232,12 @@ async function loadGroups() {
 
         groups.forEach(group => {
             const row = document.createElement("tr");
-          
+            row.innerHTML = `
+               
+               
+              
+               
+            `;
           
         });
 
