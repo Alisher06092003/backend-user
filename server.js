@@ -226,7 +226,7 @@ async function loadGroups() {
        
 
         if (!groups.length) {
-            
+            tbody.innerHTML = "<tr><td colspan='7' class='text-center'>❌ Hech qanday guruh topilmadi!</td></tr>";
             return;
         }
 
