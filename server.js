@@ -243,5 +243,8 @@ async function loadGroups() {
             tbody.appendChild(row);
         });
 
-    } 
+    } catch (error) {
+       
+       
+    }
 }
