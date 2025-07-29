@@ -85,7 +85,7 @@ app.get("/api/users", async (req, res) => {
 
         res.json(indexedUsers); // Indeks bilan qaytarish
     } catch (error) {
-      
+        console.error("❌ Xatolik:", error);
         
     }
 });
