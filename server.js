@@ -80,7 +80,7 @@ app.get("/api/users", async (req, res) => {
         // Foydalanuvchilarga indeks berish
         const indexedUsers = users.map((user, index) => ({
             index: index + 1,  // 1 dan boshlab indeks qo‘shish
-          
+            ...user            // Barcha ma’lumotlarni saqlash
         }));
 
        
