@@ -75,7 +75,7 @@ app.get('/api/students', async (req, res) => {
 // Indekslangan foydalanuvchilarni JSON formatida qaytaradi
 app.get("/api/users", async (req, res) => {
     try {
-       
+        const users = await usersCollection.find().toArray();
 
        
        
