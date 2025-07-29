@@ -78,7 +78,10 @@ app.get("/api/users", async (req, res) => {
         const users = await usersCollection.find().toArray();
 
         // Foydalanuvchilarga indeks berish
-       
+        const indexedUsers = users.map((user, index) => ({
+           
+          
+        }));
 
        
     } 
