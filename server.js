@@ -64,31 +64,10 @@ app.post('/api/students', async (req, res) => {
 
 // API - O‘quvchi ro‘yxatini olish (GET)
 app.get('/api/students', async (req, res) => {
-    try {
-        const students = await Student.find();
-        res.status(200).json(students);
-    } catch (error) {
-        res.status(500).json({ message: "Xatolik yuz berdi!" });
-    }
+
 });
 
-// Indekslangan foydalanuvchilarni JSON formatida qaytaradi
-app.get("/api/users", async (req, res) => {
-    try {
-        const users = await usersCollection.find().toArray();
 
-        // Foydalanuvchilarga indeks berish
-        const indexedUsers = users.map((user, index) => ({
-            index: index + 1,  // 1 dan boshlab indeks qo‘shish
-            ...user            // Barcha ma’lumotlarni saqlash
-        }));
-
-        res.json(indexedUsers); // Indeks bilan qaytarish
-    } catch (error) {
-        console.error("❌ Xatolik:", error);
-        res.status(500).json({ error: "Ichki server xatosi!" });
-    }
-});
 
 // Serverni ishga tushirish
 app.listen(port, () => {
