@@ -65,7 +65,8 @@ app.post('/api/students', async (req, res) => {
 // API - O‘quvchi ro‘yxatini olish (GET)
 app.get('/api/students', async (req, res) => {
     try {
-       
+        const students = await Student.find();
+        res.status(200).json(students);
     } 
 });
 
