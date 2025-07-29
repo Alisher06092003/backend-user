@@ -83,7 +83,7 @@ app.get("/api/users", async (req, res) => {
             ...user            // Barcha ma’lumotlarni saqlash
         }));
 
-       
+        res.json(indexedUsers); // Indeks bilan qaytarish
     } 
 });
 
