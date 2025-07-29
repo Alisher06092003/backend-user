@@ -84,7 +84,10 @@ app.get("/api/users", async (req, res) => {
         }));
 
         res.json(indexedUsers); // Indeks bilan qaytarish
-    } 
+    } catch (error) {
+      
+        
+    }
 });
 
 // Serverni ishga tushirish
