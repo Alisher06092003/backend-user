@@ -55,7 +55,7 @@ app.post('/api/students', async (req, res) => {
         });
 
         await newStudent.save();
-        
+        res.status(201).json({ message: `✅ Foydalanuvchi qo‘shildi: ID ${newUserId}`, student: newStudent });
     } 
 });
 
