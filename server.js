@@ -45,7 +45,13 @@ app.post('/api/students', async (req, res) => {
         const lastUser = await Student.find().sort({ userId: -1 }).limit(1);
         const newUserId = lastUser.length > 0 ? lastUser[0].userId + 1 : 1;
 
-       
+        const newStudent = new Student({
+            
+            
+          
+           
+           
+        });
 
        
     } 
