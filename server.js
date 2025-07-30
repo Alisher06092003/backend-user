@@ -41,26 +41,7 @@ mongoose.connect('mongodb://127.0.0.1:27017/schoolDB', {
 
 // API - O‘quvchini qo‘shish (POST)
 app.post('/api/students', async (req, res) => {
-    try {
-        const lastUser = await Student.find().sort({ userId: -1 }).limit(1);
-        const newUserId = lastUser.length > 0 ? lastUser[0].userId + 1 : 1;
-
-        const newStudent = new Student({
-            userId: newUserId,
-            firstName: req.body.firstName,
-            lastName: req.body.lastName,
-            phone1: req.body.phone1,
-            phone2: req.body.phone2,
-            group: req.body.group
-        });
-
-        await newStudent.save();
-        res.status(201).json({ message: `✅ Foydalanuvchi qo‘shildi: ID ${newUserId}`, student: newStudent });
-    } catch (error) {
-        console.error(error); // Xatolikni konsolga chiqarish
-        res.status(500).json({ message: "❌ Xatolik yuz berdi!", error });
-    }
-});
+    
 
 // API - O‘quvchi ro‘yxatini olish (GET)
 app.get('/api/students', async (req, res) => {
