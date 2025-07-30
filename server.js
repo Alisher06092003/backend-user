@@ -43,7 +43,7 @@ mongoose.connect('mongodb://127.0.0.1:27017/schoolDB', {
 app.post('/api/students', async (req, res) => {
     try {
         const lastUser = await Student.find().sort({ userId: -1 }).limit(1);
-        
+        const newUserId = lastUser.length > 0 ? lastUser[0].userId + 1 : 1;
 
        
 
