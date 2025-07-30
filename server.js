@@ -48,7 +48,7 @@ app.post('/api/students', async (req, res) => {
         const newStudent = new Student({
             userId: newUserId,
             firstName: req.body.firstName,
-            
+            lastName: req.body.lastName,
           
            
            
