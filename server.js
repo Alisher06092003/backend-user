@@ -54,7 +54,8 @@ app.post('/api/students', async (req, res) => {
             group: req.body.group
         });
 
-       
+        await newStudent.save();
+        
     } 
 });
 
