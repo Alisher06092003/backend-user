@@ -58,7 +58,7 @@ app.post('/api/students', async (req, res) => {
         res.status(201).json({ message: `✅ Foydalanuvchi qo‘shildi: ID ${newUserId}`, student: newStudent });
     } catch (error) {
         console.error(error); // Xatolikni konsolga chiqarish
-        
+        res.status(500).json({ message: "❌ Xatolik yuz berdi!", error });
     }
 });
 
