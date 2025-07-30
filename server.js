@@ -41,7 +41,15 @@ mongoose.connect('mongodb://127.0.0.1:27017/schoolDB', {
 
 // API - O‘quvchini qo‘shish (POST)
 app.post('/api/students', async (req, res) => {
-    
+    try {
+       
+        
+
+       
+
+       
+    } 
+});
 
 // API - O‘quvchi ro‘yxatini olish (GET)
 app.get('/api/students', async (req, res) => {
