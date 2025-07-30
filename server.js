@@ -42,7 +42,7 @@ mongoose.connect('mongodb://127.0.0.1:27017/schoolDB', {
 // API - O‘quvchini qo‘shish (POST)
 app.post('/api/students', async (req, res) => {
     try {
-       
+        const lastUser = await Student.find().sort({ userId: -1 }).limit(1);
         
 
        
