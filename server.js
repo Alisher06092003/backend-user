@@ -50,7 +50,7 @@ app.post('/api/students', async (req, res) => {
             firstName: req.body.firstName,
             lastName: req.body.lastName,
             phone1: req.body.phone1,
-           
+            phone2: req.body.phone2,
            
         });
 
