@@ -118,7 +118,9 @@ app.get("/api/students/:id", async (req, res) => {
 
         const student = await Student.findById(studentId);
 
-       
+        if (!student) {
+            
+        }
 
        
     } 
