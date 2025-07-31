@@ -109,7 +109,16 @@ app.delete("/api/students/:id", async (req, res) => {
 
 // Foydalanuvchini Tahrirlash (UPDATE)
 app.get("/api/students/:id", async (req, res) => {
-    
+    try {
+       
+
+       
+        
+
+       
+
+       
+    } 
 });
 
 // Berilgan IDga ega Foydalanuvchini yangilaydi.
