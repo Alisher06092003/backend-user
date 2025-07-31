@@ -123,7 +123,10 @@ app.get("/api/students/:id", async (req, res) => {
         }
 
         res.json(student);
-    } 
+    } catch (error) {
+       
+        
+    }
 });
 
 // Berilgan IDga ega Foydalanuvchini yangilaydi.
