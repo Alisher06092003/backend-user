@@ -119,7 +119,7 @@ app.get("/api/students/:id", async (req, res) => {
         const student = await Student.findById(studentId);
 
         if (!student) {
-            
+            return res.status(404).json({ message: "❌ Foydalanuvchi topilmadi!" });
         }
 
        
