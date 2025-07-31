@@ -113,7 +113,7 @@ app.get("/api/students/:id", async (req, res) => {
         const studentId = req.params.id;
 
         if (!mongoose.Types.ObjectId.isValid(studentId)) {
-           
+            return res.status(400).json({ message: "❌ Noto‘g‘ri ID formati!" });
         }
 
         
