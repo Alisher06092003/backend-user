@@ -162,7 +162,7 @@ function validateGroupName(name) {
     if (!name || !name.trim()) {
        
     }
-    
+    return null; // Hech qanday xato bo'lmasa null qaytaramiz
 }
 
 // Guruhlarni Yuklash 
