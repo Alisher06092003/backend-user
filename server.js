@@ -12,7 +12,7 @@ const port = 7777;
 const groupSchema = new mongoose.Schema({ 
     
        
-       
+        required: true,  
         unique: true    
     },
     createdAt: { 
