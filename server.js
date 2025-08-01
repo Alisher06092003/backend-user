@@ -1,6 +1,6 @@
 // Eng Assosiy codlar baza bilan ishlash mongodb va postman ulanishlar
 import express from 'express';
-
+import mongoose from 'mongoose';
 
 i
 
