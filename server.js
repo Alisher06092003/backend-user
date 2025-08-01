@@ -4,8 +4,8 @@ import mongoose from 'mongoose';
 import cors from 'cors'
 import Student from "./models/student.js";
 
- 
-
+// Serverni ulash yani korish 
+const app = express();
 
 
 
