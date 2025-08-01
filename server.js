@@ -11,7 +11,7 @@ const port = 7777;
 // Guruh sxemasi
 const groupSchema = new mongoose.Schema({ 
     
-       
+        type: String, 
         required: true,  
         unique: true    
     },
