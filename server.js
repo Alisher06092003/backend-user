@@ -1,25 +1,15 @@
 // Eng Assosiy codlar baza bilan ishlash mongodb va postman ulanishlar
 import express from 'express';
-import mongoose from 'mongoose';
-import cors from 'cors'
-import Student from "./models/student.js";
 
-// Serverni ulash yani korish 
-const app = express();
-const port = 7777;
 
-// Guruh sxemasi
-const groupSchema = new mongoose.Schema({ 
-    name: { 
-        type: String, 
-        required: true,  
-        unique: true    
-    },
-    createdAt: { 
-        type: Date, 
-        default: Date.now 
-    }
-});
+i
+
+ 
+
+
+
+
+
 
 // Guruh modelini yaratish
 const Group = mongoose.model("Group", groupSchema);
