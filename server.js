@@ -16,7 +16,7 @@ const groupSchema = new mongoose.Schema({
        
    
        
-         
+        default: Date.now 
     }
 });
 
