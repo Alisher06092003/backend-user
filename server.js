@@ -9,7 +9,16 @@ const app = express();
 const port = 7777;
 
 // Guruh sxemasi
-
+const groupSchema = new mongoose.Schema({ 
+    
+       
+       
+       
+   
+       
+         
+    }
+});
 
 // Guruh modelini yaratish
 const Group = mongoose.model("Group", groupSchema);
