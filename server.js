@@ -6,7 +6,7 @@ import Student from "./models/student.js";
 
 // Serverni ulash yani korish 
 const app = express();
-
+const port = 7777;
 
 
 
