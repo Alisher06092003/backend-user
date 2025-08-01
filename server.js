@@ -8,7 +8,7 @@ import Student from "./models/student.js";
 const app = express();
 const port = 7777;
 
-
+// Guruh sxemasi
 
 
 // Guruh modelini yaratish
