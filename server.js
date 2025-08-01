@@ -13,7 +13,7 @@ const groupSchema = new mongoose.Schema({
     
        
        
-       
+        unique: true    
     },
     createdAt: { 
         type: Date, 
