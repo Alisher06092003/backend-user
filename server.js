@@ -63,7 +63,7 @@ app.post('/api/students', async (req, res) => {
 });
 
 // API - O‘quvchi ro‘yxatini olish (GET)
-app.get('/api/students',   => {
+app.get('/api/students',  (req, res) => {
    
 });
 
