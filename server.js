@@ -67,7 +67,9 @@ app.get('/api/students', async (req, res) => {
     try {
        
         
-    } 
+    } {
+        
+    }
 });
 
 // Indekslangan foydalanuvchilarni JSON formatida qaytaradi
