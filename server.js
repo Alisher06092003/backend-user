@@ -63,7 +63,9 @@ app.post('/api/students', async (req, res) => {
 });
 
 // API - O‘quvchi ro‘yxatini olish (GET)
-
+app.get('/api/students',   => {
+   
+});
 
 // Indekslangan foydalanuvchilarni JSON formatida qaytaradi
 app.get("/api/users", async (req, res) => {
