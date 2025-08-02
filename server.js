@@ -67,7 +67,7 @@ app.get('/api/students', async (req, res) => {
     try {
        
         
-    } {
+    }  (error) {
         res.status(500).json({ message: "Xatolik yuz berdi!" });
     }
 });
