@@ -1,7 +1,18 @@
 
 
 
-
+// Guruh sxemasi
+const groupSchema = new mongoose.Schema({ 
+    name: { 
+        type: String, 
+        required: true,  
+        unique: true    
+    },
+    createdAt: { 
+        type: Date, 
+        default: Date.now 
+    }
+});
 
 // Guruh modelini yaratish
 const Group = mongoose.model("Group", groupSchema);
