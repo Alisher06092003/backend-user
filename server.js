@@ -3,6 +3,8 @@
 
 
 
+// Guruh modelini yaratish
+const Group = mongoose.model("Group", groupSchema);
 
 app.use(express.json());
 app.use(cors());
