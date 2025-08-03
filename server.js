@@ -11,8 +11,28 @@
 
 
 
+// Indekslangan foydalanuvchilarni JSON formatida qaytaradi
+app.get("/api/users", async (req, res) => {
+    try {
+        const users = await usersCollection.find().toArray();
 
+        // Foydalanuvchilarga indeks berish
+        const indexedUsers = users.map((user, index) => ({
+            index: index + 1,  // 1 dan boshlab indeks qo‘shish
+            ...user            // Barcha ma’lumotlarni saqlash
+        }));
 
+        res.json(indexedUsers); // Indeks bilan qaytarish
+    } catch (error) {
+        console.error("❌ Xatolik:", error);
+        res.status(500).json({ error: "Ichki server xatosi!" });
+    }
+});
+
+// Serverni ishga tushirish
+app.listen(port, () => {
+    console.log(`✅ Server ishlayapti: http://localhost:${port}`);
+});
 
 // Foydalanuvchini O'chirish (DELETE)
 app.delete("/api/students/:id", async (req, res) => {
