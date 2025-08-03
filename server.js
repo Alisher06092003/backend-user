@@ -4,6 +4,8 @@
 
 
 
+app.use(express.json());
+app.use(cors());
 
 // MongoDB ga ulanish!
 mongoose.connect('mongodb://127.0.0.1:27017/schoolDB', {
