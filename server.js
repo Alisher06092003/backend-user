@@ -1,5 +1,7 @@
 
-
+// Serverni ulash yani korish 
+const app = express();
+const port = 7777;
 
 // Guruh sxemasi
 const groupSchema = new mongoose.Schema({ 
