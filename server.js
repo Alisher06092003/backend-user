@@ -14,7 +14,17 @@
 
 
 
-
+// Foydalanuvchini O'chirish (DELETE)
+app.delete("/api/students/:id", async (req, res) => {
+    try {
+        const studentId = req.params.id;
+        await Student.deleteOne({ _id: new mongoose.Types.ObjectId(studentId) });
+        res.json({ message: "✅ Talaba muvaffaqiyatli o'chirildi!" });
+    } catch (error) {
+        console.error("❌ Xatolik:", error);
+        res.status(500).json({ message: "Ichki server xatosi!" });
+    }
+});
 
 // Foydalanuvchini Tahrirlash (UPDATE)
 app.get("/api/students/:id", async (req, res) => {
