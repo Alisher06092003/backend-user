@@ -317,47 +317,27 @@ async function createGroup(groupName) {
 
 // DOM yuklanganda bajariladigan kod
 document.addEventListener("DOMContentLoaded", function () {
-    const dropdownButton = document.getElementById("newButton");
-    const groupNameInput = document.getElementById("groupNameInput");
+    
+    
 
-    // DOM elementlari mavjudligini tekshirish
-    if (!dropdownButton || !groupNameInput) {
-        console.error("❌ newButton yoki groupNameInput topilmadi! HTML-ni tekshiring.");
-        return; // Agar elementlar topilmasa, funksiyani to'xtat
+    
+    
+        
+       
     }
 
-    dropdownButton.addEventListener("click", handleGroupCreation);
+    
 });
 
 // Foydalanuvchilar ro'yxatini yuklash
 async function loadGroups() {
     try {
-        const response = await fetch("http://127.0.0.1:7777/api/groups");
-        if (!response.ok) {
-            throw new Error("❌ Guruhlarni olishda xatolik yuz berdi!");
-        }
+      
+     
 
-        const groups = await response.json();
-        const tbody = document.querySelector("tbody");
-        tbody.innerHTML = ""; // Ro'yxatni tozalash
+       
 
-        if (!groups.length) {
-            tbody.innerHTML = "<tr><td colspan='4' class='text-center'>❌ Hech qanday guruh topilmadi!</td></tr>";
-            return;
-        }
-
-        groups.forEach(group => {
-            const row = document.createElement("tr");
-            row.innerHTML = `
-                <td>${group.name}</td>
-                <td>${group.formattedDate}</td>
-                <td>${group.time}</td>
-                <td>
-                    <button class="showListBtn">Ro‘yxatni ko‘rish</button>
-                </td>
-            `;
-            tbody.appendChild(row);
-        });
+     
 
     } catch (error) {
         console.error("❌ Xatolik:", error);
