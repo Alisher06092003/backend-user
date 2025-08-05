@@ -229,7 +229,9 @@ async function loadGroups() {
             });
         });
 
-    } 
+    } catch (error) {
+       
+    }
 }
 
 
