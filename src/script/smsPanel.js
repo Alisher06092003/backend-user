@@ -235,6 +235,8 @@ async function loadGroups() {
     }
 }
 
+// Sahna yuklanganda guruhlarni yuklash
+document.addEventListener('DOMContentLoaded', loadGroups);
 
 
 
