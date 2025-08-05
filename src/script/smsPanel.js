@@ -241,7 +241,7 @@ document.addEventListener('DOMContentLoaded', loadGroups);
 // Modalni ochish
     document.querySelectorAll('.showListBtn').forEach(button => {
         button.addEventListener('click', () => {
-            
+            document.getElementById('userModal').classList.remove('hidden');
         });
     });
 
