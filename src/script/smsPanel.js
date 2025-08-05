@@ -253,7 +253,7 @@ document.addEventListener('DOMContentLoaded', loadGroups);
     // Modalni yopish uchun fonni bosish
     document.getElementById('userModal').addEventListener('click', (event) => {
         if (event.target === event.currentTarget) {
-            
+            document.getElementById('userModal').classList.add('hidden');
         }
     });
 
