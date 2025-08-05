@@ -247,7 +247,7 @@ document.addEventListener('DOMContentLoaded', loadGroups);
 
     // Modalni yopish
     document.getElementById('closeModalBtn').addEventListener('click', () => {
-       
+        document.getElementById('userModal').classList.add('hidden');
     });
 
     
