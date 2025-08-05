@@ -230,7 +230,8 @@ async function loadGroups() {
         });
 
     } catch (error) {
-       
+        console.error("❌ Xatolik:", error);
+        document.querySelector("tbody").innerHTML = "<tr><td colspan='7'>❌ Guruhlar yuklanmadi!</td></tr>";
     }
 }
 
