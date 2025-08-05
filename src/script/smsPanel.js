@@ -238,7 +238,10 @@ async function loadGroups() {
 // Sahna yuklanganda guruhlarni yuklash
 document.addEventListener('DOMContentLoaded', loadGroups);
 
-
+// Modalni ochish
+    document.querySelectorAll('.showListBtn').forEach(button => {
+       
+    });
 
   
 
