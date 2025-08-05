@@ -229,33 +229,16 @@ async function loadGroups() {
             });
         });
 
-    } catch (error) {
-        console.error("❌ Xatolik:", error);
-        document.querySelector("tbody").innerHTML = "<tr><td colspan='7'>❌ Guruhlar yuklanmadi!</td></tr>";
-    }
+    } 
 }
 
-// Sahna yuklanganda guruhlarni yuklash
-document.addEventListener('DOMContentLoaded', loadGroups);
 
-// Modalni ochish
-    document.querySelectorAll('.showListBtn').forEach(button => {
-        button.addEventListener('click', () => {
-            document.getElementById('userModal').classList.remove('hidden');
-        });
-    });
 
-    // Modalni yopish
-    document.getElementById('closeModalBtn').addEventListener('click', () => {
-        document.getElementById('userModal').classList.add('hidden');
-    });
 
-    // Modalni yopish uchun fonni bosish
-    document.getElementById('userModal').addEventListener('click', (event) => {
-        if (event.target === event.currentTarget) {
-            document.getElementById('userModal').classList.add('hidden');
-        }
-    });
+  
+
+    
+  
 
 
 
