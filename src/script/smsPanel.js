@@ -245,7 +245,10 @@ document.addEventListener('DOMContentLoaded', loadGroups);
         });
     });
 
-  
+    // Modalni yopish
+    document.getElementById('closeModalBtn').addEventListener('click', () => {
+       
+    });
 
     
   
