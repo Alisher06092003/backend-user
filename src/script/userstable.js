@@ -274,7 +274,7 @@ function editUser(userId) {
         return;
     }
 
-    
+    fetch(`http://localhost:7777/api/students/${encodeURI(userId)}`)
         
         
             
