@@ -271,7 +271,7 @@ function showError(message) {
 function editUser(userId) {
     if (!userId || userId.length !== 24) {
         showError("❌ Noto‘g‘ri foydalanuvchi ID!");
-       
+        return;
     }
 
     
