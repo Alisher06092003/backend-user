@@ -287,7 +287,7 @@ function editUser(userId) {
            
             
           
-           
+            document.getElementById("saveEditBtn").setAttribute("data-user-id", userId);
         })
         .catch(() => showError("❌ Foydalanuvchini yuklashda muammo"));
 }
