@@ -276,7 +276,7 @@ function editUser(userId) {
 
     fetch(`http://localhost:7777/api/students/${encodeURI(userId)}`)
         
-        
+        .then(user => {
             console.log("Yuklangan foydalanuvchi:", user); // 🛠 Konsolda tekshirish!
 
             const modal = document.getElementById("editUserModal");
