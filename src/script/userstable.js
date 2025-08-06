@@ -286,7 +286,8 @@ function editUser(userId) {
             
            
             
-          
+            document.getElementById("editGroup").value = user.group ?? "";
+
             document.getElementById("saveEditBtn").setAttribute("data-user-id", userId);
         })
         .catch(() => showError("❌ Foydalanuvchini yuklashda muammo"));
