@@ -275,7 +275,7 @@ function editUser(userId) {
     }
 
     fetch(`http://localhost:7777/api/students/${encodeURI(userId)}`)
-        
+        .then(response => response.json())
         .then(user => {
             console.log("Yuklangan foydalanuvchi:", user); // 🛠 Konsolda tekshirish!
 
