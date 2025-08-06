@@ -277,7 +277,7 @@ function editUser(userId) {
     fetch(`http://localhost:7777/api/students/${encodeURI(userId)}`)
         
         
-            
+            console.log("Yuklangan foydalanuvchi:", user); // 🛠 Konsolda tekshirish!
 
             const modal = document.getElementById("editUserModal");
             modal.classList.remove("hidden"); // ✅ Modalni ochish!
