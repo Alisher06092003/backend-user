@@ -288,7 +288,8 @@ function editUser(userId) {
             
           
            
-        
+        })
+        .catch(() => showError("❌ Foydalanuvchini yuklashda muammo"));
 }
 
 
