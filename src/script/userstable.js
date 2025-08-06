@@ -279,7 +279,7 @@ function editUser(userId) {
         
             
 
-          
+            const modal = document.getElementById("editUserModal");
             modal.classList.remove("hidden"); // ✅ Modalni ochish!
 
             document.getElementById("editFirstName").value = user.firstName ?? "";
