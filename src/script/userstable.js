@@ -221,7 +221,9 @@ function showConfirmDialog(text, confirmCallback) {
         
         
         
-   
+    }).then((result) => {
+       
+    });
 }
 
 function deleteUser(userId) {
