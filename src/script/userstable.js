@@ -222,7 +222,9 @@ function showConfirmDialog(text, confirmCallback) {
         
         
     }).then((result) => {
-       
+        if (result.isConfirmed) {
+            confirmCallback(); // Agar OK bosilsa, davom ettiradi
+        }
     });
 }
 
