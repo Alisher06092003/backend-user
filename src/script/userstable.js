@@ -210,7 +210,7 @@ function deleteSelectedUsers() {
 }
 
 
-function  {
+function showConfirmDialog(text, confirmCallback) {
    
        
        
