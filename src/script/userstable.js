@@ -210,22 +210,18 @@ function deleteSelectedUsers() {
 }
 
 
-function showConfirmDialog(text, confirmCallback) {
-    Swal.fire({
-        text: text,
-        icon: "warning",
-        iconColor: "red",
-        color: "red",
-        showCancelButton: true,
-        confirmButtonText: "OK",
-        cancelButtonText: "Bekor qilish",
-        confirmButtonColor: "red",
-        reverseButtons: true,
-    }).then((result) => {
-        if (result.isConfirmed) {
-            confirmCallback(); // Agar OK bosilsa, davom ettiradi
-        }
-    });
+function  {
+   
+       
+       
+        
+       
+        
+        
+        
+        
+        
+   
 }
 
 function deleteUser(userId) {
