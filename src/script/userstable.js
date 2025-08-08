@@ -214,7 +214,7 @@ function showConfirmDialog(text, confirmCallback) {
     Swal.fire({
        
        
-        
+        iconColor: "red",
         color: "red",
         showCancelButton: true,
         confirmButtonText: "OK",
