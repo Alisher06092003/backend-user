@@ -122,7 +122,7 @@ document.getElementById("addStudentsBtn").addEventListener("click", () => {
 
 document.getElementById("registeredBtn").addEventListener("click", () => {
    
-   
+    const iconElement = document.querySelector(".elSwitch svg");
     const textElement = document.querySelector("#addstuden");
 
     switchElement.style.transform = "translateX(100%)"; // ✅ O‘rtaga siljish
