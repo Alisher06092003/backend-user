@@ -125,7 +125,7 @@ document.getElementById("addStudentsBtn").addEventListener("click", () => {
 document.getElementById("addAdminBtn").addEventListener("click", () => {
    
     
-    
+    const textElement = document.querySelector("#addstuden");
 
     switchElement.style.transform = "translateX(200%)"; // ✅ O‘ngga siljish
     iconElement.style.transform = "rotate(180deg)";
