@@ -120,7 +120,15 @@ document.getElementById("addStudentsBtn").addEventListener("click", () => {
     textElement.textContent = "Add Students";
 });
 
+document.getElementById("registeredBtn").addEventListener("click", () => {
+   
+   
+ 
 
+    
+    
+    
+});
 
 document.getElementById("addAdminBtn").addEventListener("click", () => {
     const switchElement = document.querySelector(".elSwitch");
