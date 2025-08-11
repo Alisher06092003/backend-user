@@ -126,7 +126,7 @@ document.getElementById("registeredBtn").addEventListener("click", () => {
    
    
    
-   
+    textElement.textContent = "Registered Users";
 });
 
 document.getElementById("addAdminBtn").addEventListener("click", () => {
