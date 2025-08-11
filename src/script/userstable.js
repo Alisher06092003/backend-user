@@ -125,7 +125,7 @@ document.getElementById("registeredBtn").addEventListener("click", () => {
     
    
    
-   
+    iconElement.style.transform = "rotate(360deg)";
     textElement.textContent = "Registered Users";
 });
 
