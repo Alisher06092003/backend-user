@@ -131,7 +131,7 @@ document.getElementById("registeredBtn").addEventListener("click", () => {
 
 document.getElementById("addAdminBtn").addEventListener("click", () => {
    
-   
+    const iconElement = document.querySelector(".elSwitch svg");
     const textElement = document.querySelector("#addstuden");
 
     switchElement.style.transform = "translateX(200%)"; // ✅ O‘ngga siljish
