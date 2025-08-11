@@ -136,7 +136,7 @@ document.getElementById("addAdminBtn").addEventListener("click", () => {
 
     
     
-   
+    textElement.textContent = "Add Admin";
 });
 
 async function editUser(userId) {
