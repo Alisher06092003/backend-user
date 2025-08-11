@@ -129,7 +129,15 @@ document.getElementById("registeredBtn").addEventListener("click", () => {
    
 });
 
+document.getElementById("addAdminBtn").addEventListener("click", () => {
+   
+   
+   
 
+    
+    
+   
+});
 
 async function editUser(userId) {
     try {
