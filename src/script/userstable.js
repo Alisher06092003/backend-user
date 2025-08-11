@@ -135,7 +135,7 @@ document.getElementById("addAdminBtn").addEventListener("click", () => {
    
 
     
-    
+    iconElement.style.transform = "rotate(180deg)";
     textElement.textContent = "Add Admin";
 });
 
