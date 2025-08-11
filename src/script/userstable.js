@@ -116,7 +116,7 @@ document.getElementById("addStudentsBtn").addEventListener("click", () => {
     const textElement = document.querySelector("#addstuden");
 
    
-   
+    iconElement.style.transform = "rotate(720deg)";
     textElement.textContent = "Add Students";
 });
 
