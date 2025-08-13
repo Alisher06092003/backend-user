@@ -109,21 +109,12 @@ document.getElementById("addAdminBtn").addEventListener("click", () => {
     document.getElementById("errors").classList.remove("hidden"); // ✅ Ko‘rsatish
 });
 
-// Additional window Click cinopka 
-document.getElementById("addStudentsBtn").addEventListener("click", () => {
-    const switchElement = document.querySelector(".elSwitch");
-    const iconElement = document.querySelector(".elSwitch svg");
-    const textElement = document.querySelector("#addstuden");
 
-    switchElement.style.transform = "translateX(0%)"; // ✅ Chapga siljish
-    iconElement.style.transform = "rotate(720deg)";
-    textElement.textContent = "Add Students";
-});
 
-document.getElementById("registeredBtn").addEventListener("click", () => {
-    const switchElement = document.querySelector(".elSwitch");
-    const iconElement = document.querySelector(".elSwitch svg");
-    const textElement = document.querySelector("#addstuden");
+
+    
+  
+   
 
     switchElement.style.transform = "translateX(100%)"; // ✅ O‘rtaga siljish
     iconElement.style.transform = "rotate(360deg)";
