@@ -112,7 +112,7 @@ document.getElementById("addAdminBtn").addEventListener("click", () => {
 
 
 
-    
+    const switchElement = document.querySelector(".elSwitch");
     const iconElement = document.querySelector(".elSwitch svg");
     const textElement = document.querySelector("#addstuden");
 
