@@ -109,7 +109,16 @@ document.getElementById("addAdminBtn").addEventListener("click", () => {
     document.getElementById("errors").classList.remove("hidden"); // ✅ Ko‘rsatish
 });
 
+// Additional window Click cinopka 
+document.getElementById("addStudentsBtn").addEventListener("click", () => {
+    
+   
+    
 
+   
+    
+   
+});
 
 document.getElementById("registeredBtn").addEventListener("click", () => {
     const switchElement = document.querySelector(".elSwitch");
