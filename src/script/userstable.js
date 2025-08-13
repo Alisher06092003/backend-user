@@ -111,7 +111,7 @@ document.getElementById("addAdminBtn").addEventListener("click", () => {
 
 // Additional window Click cinopka 
 document.getElementById("addStudentsBtn").addEventListener("click", () => {
-    
+    const switchElement = document.querySelector(".elSwitch");
    
     
 
